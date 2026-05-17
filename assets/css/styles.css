@@ -719,7 +719,7 @@ address {
   overflow: hidden;
   background:
     linear-gradient(rgba(255, 253, 247, 0.76), rgba(255, 253, 247, 0.76)),
-    url("../img/decor/paper-cream.png") center / 720px auto;
+    url("../img/decor/paper-leaf-wide.png") center top / cover;
 }
 
 .access-section::before,
@@ -987,8 +987,8 @@ body {
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(rgba(246, 235, 216, 0.74), rgba(246, 235, 216, 0.74)),
-    url("../img/decor/paper-cream.png") center / 720px auto;
+    linear-gradient(rgba(246, 235, 216, 0.68), rgba(246, 235, 216, 0.68)),
+    url("../img/decor/paper-leaf-wide.png") center top / cover;
 }
 
 .products-section::after {
@@ -1035,7 +1035,7 @@ body {
   width: 180px;
   aspect-ratio: 1;
   content: "";
-  background: url("../img/decor/crop-sketches.png") right bottom / 360px auto no-repeat;
+  background: url("../img/decor/crop-sketch-panel.png") right bottom / 300px auto no-repeat;
   opacity: 0.2;
 }
 
@@ -1092,7 +1092,7 @@ body {
   width: 80px;
   height: 56px;
   content: "";
-  background: url("../img/decor/crop-sketches.png") center / 220px auto no-repeat;
+  background: url("../img/decor/crop-sketch-panel.png") center / 220px auto no-repeat;
   opacity: 0.16;
 }
 
@@ -1326,20 +1326,21 @@ body {
   }
 
   .products-page-section::before {
-    top: 10px;
-    left: -56px;
-    width: 180px;
+    top: 8px;
+    left: -78px;
+    width: 210px;
     aspect-ratio: 1;
-    background-image: url("../img/decor/leaf-corner-right.png");
-    transform: scaleX(-1) rotate(-8deg);
+    background-image: url("../img/decor/leaf-mobile-side.png");
+    transform: rotate(-6deg);
   }
 
   .products-page-section::after {
-    right: -64px;
-    top: 110px;
-    width: 160px;
+    right: -86px;
+    top: 45%;
+    width: 190px;
     aspect-ratio: 1;
-    background-image: url("../img/decor/leaf-flower-left.png");
+    background-image: url("../img/decor/leaf-mobile-side.png");
+    transform: scaleX(-1) rotate(10deg);
   }
 
   .products-page-section .section-heading {
