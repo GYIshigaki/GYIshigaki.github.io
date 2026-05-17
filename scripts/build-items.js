@@ -62,6 +62,7 @@ const items = fs.readdirSync(itemsDir, { withFileTypes: true })
       id: entry.name,
       name: desc.name || entry.name,
       label: desc.label || "",
+      origin: desc.origin || "Ishigaki",
       intro: desc.intro || desc.description || "",
       featured: Boolean(desc.featured),
       order: Number.parseInt(desc.order || "999", 10),

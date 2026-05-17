@@ -45,34 +45,42 @@
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="hero-slider" data-slider aria-hidden="true">
-        <span class="hero-slide hero-slide-1 is-active" data-slide></span>
-        <span class="hero-slide hero-slide-2" data-slide></span>
-        <span class="hero-slide hero-slide-3" data-slide></span>
-        <span class="hero-slide hero-slide-4" data-slide></span>
-        <span class="hero-slide hero-slide-5" data-slide></span>
+        <div class="hero-slide hero-slide--farm is-active" data-slide>
+          <img src="./img/slider/image1.jpg" alt="" width="1479" height="1109">
+        </div>
+        <div class="hero-slide hero-slide--vegetables" data-slide>
+          <img src="./img/slider/image3.jpg" alt="" width="1109" height="1479">
+        </div>
+        <div class="hero-slide hero-slide--sunset" data-slide>
+          <img src="./img/slider/image2.jpg" alt="" width="1479" height="1109">
+        </div>
+        <div class="hero-slide hero-slide--island" data-slide>
+          <img src="./img/slider/image5.jpg" alt="" width="1024" height="768">
+        </div>
+        <div class="hero-slide hero-slide--crop" data-slide>
+          <img src="./img/slider/image4.jpg" alt="" width="1479" height="1109">
+        </div>
       </div>
       <div class="hero-content">
-        <p class="eyebrow">Ishigaki Island Farm</p>
-        <h1 id="hero-title">島の光と土から、まっすぐに。</h1>
-        <p class="hero-copy">沖縄県石垣市で育てた野菜や果物を、日々の食卓へ。畑の息づかいが伝わる農産物づくりを続けています。</p>
+        <p class="eyebrow">ISHIGAKI ISLAND FARM</p>
+        <h1 class="hero-title" id="hero-title">
+          <span class="hero-title__line">島の光と土から、</span>
+          <span class="hero-title__line">まっすぐに。</span>
+        </h1>
+        <p class="hero-copy">沖縄県石垣市で育てた野菜や果物を、日々の食卓へ。<br>畑の息づかいが伝わる農産物づくりを続けています。</p>
         <div class="hero-actions">
           <a class="button button-primary" href="./products.html">商品を見る</a>
           <a class="button button-ghost" href="#contact">相談する</a>
         </div>
       </div>
-      <p class="hero-note">GY Farm / Okinawa Ishigaki</p>
+      <svg class="hero-wave" viewBox="0 0 1440 180" preserveAspectRatio="none" aria-hidden="true">
+        <path class="hero-wave-layer hero-wave-layer-back" d="M0 96 C240 58 430 82 660 102 C890 122 1100 112 1260 88 C1350 74 1400 78 1440 86 V180 H0 Z"></path>
+        <path class="hero-wave-layer hero-wave-layer-middle" d="M0 116 C260 78 460 100 700 118 C920 135 1130 124 1290 100 C1370 88 1410 92 1440 100 V180 H0 Z"></path>
+        <path class="hero-wave-layer hero-wave-layer-front" d="M0 138 C250 106 500 122 760 138 C980 152 1180 146 1440 122 V180 H0 Z"></path>
+      </svg>
     </section>
 
-    <section class="section people-section" id="about" aria-labelledby="people-title">
-      <div class="section-heading">
-        <p class="eyebrow">Members</p>
-        <h2 id="people-title">つくり手</h2>
-        <p>石垣島の自然とともに、日々畑に向き合うつくり手たちをご紹介します。</p>
-      </div>
-      <div class="people-grid" data-members-list></div>
-    </section>
-
-    <section class="section about-section" aria-labelledby="about-title">
+    <section class="section about-section" id="about" aria-labelledby="about-title">
       <div class="section-grid">
         <div class="section-copy">
           <p class="eyebrow">About Us</p>
@@ -96,16 +104,19 @@
 
       <div class="product-grid" data-items-list data-items-mode="featured"></div>
 
-      <a class="button button-outline" href="./products.html">すべての商品を見る</a>
+      <div class="products-more">
+        <a class="button button-outline" href="./products.html">すべての商品を見る</a>
+      </div>
     </section>
 
     <section class="story-band" id="farm" aria-labelledby="farm-title">
       <div class="story-media">
         <img src="./img/farm/LINE_ALBUM_HP素材_231117_21.jpg" alt="畑で育つ作物" width="1280" height="1280" loading="lazy">
+        <p class="story-media-caption">太陽と風が育てる、<br>島の恵み。</p>
       </div>
       <div class="story-copy">
         <p class="eyebrow">Farm Story</p>
-        <h2 id="farm-title">畑の表情を、毎日見る。</h2>
+        <h2 id="farm-title">畑の表情を、<br class="sp-only">毎日見る。</h2>
         <p>天候や土の湿り気、葉の色、実の張り。小さな変化を見逃さないことが、安定した味につながります。</p>
         <dl class="farm-facts">
           <div>
@@ -118,32 +129,66 @@
           </div>
           <div>
             <dt>Style</dt>
-            <dd>地域に根ざした少量多品目</dd>
+            <dd>自然に寄り添う、丁寧な栽培</dd>
           </div>
         </dl>
+      </div>
+    </section>
+
+    <section class="section people-section" id="members" aria-labelledby="people-title">
+      <div class="section-heading">
+        <p class="eyebrow">Members</p>
+        <h2 id="people-title">つくり手</h2>
+        <p>石垣島の自然とともに、日々畑に向き合うつくり手たちをご紹介します。</p>
+      </div>
+      <div class="people-grid" data-members-list></div>
+    </section>
+
+    <section class="section news-section" aria-labelledby="news-title">
+      <div class="section-grid">
+        <div class="section-copy">
+          <p class="eyebrow">News</p>
+          <h2 id="news-title">お知らせ</h2>
+          <ul class="news-list">
+            <li><time datetime="2024-05-15">2024.05.15</time><span>ホームページをリニューアルしました</span></li>
+            <li><time datetime="2024-04-20">2024.04.20</time><span>新玉ねぎの出荷を開始しました</span></li>
+            <li><time datetime="2024-04-01">2024.04.01</time><span>春夏野菜の収穫が始まりました</span></li>
+          </ul>
+          <a class="button button-primary" href="./achievements.html">お知らせ一覧</a>
+        </div>
+        <div class="news-photo">
+          <img src="./img/farm/LINE_ALBUM_HP素材_231117_31.jpg" alt="石垣島の農園風景" width="1280" height="1280" loading="lazy">
+        </div>
       </div>
     </section>
 
     <section class="section access-section" id="access" aria-labelledby="access-title">
       <div class="section-grid">
         <div class="section-copy">
-          <p class="eyebrow">Access</p>
-          <h2 id="access-title">畑の見学について</h2>
-          <p>見学をご希望の場合は、事前にお問い合わせください。収穫や天候の都合に合わせて、無理のない日程をご案内します。</p>
+          <p class="eyebrow">Farm Visit</p>
+          <h2 class="access-title" id="access-title">畑の見学<span class="nowrap">について</span></h2>
+          <p class="access-lead">見学をご希望の場合は、事前にお問い合わせください。収穫や天候の都合に合わせて、無理のない日程をご案内します。</p>
           <div class="access-info">
-            <div>
-              <span class="access-icon">●</span>
+            <div class="access-info-item">
+              <span class="access-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 21s6-5.4 6-11a6 6 0 1 0-12 0c0 5.6 6 11 6 11Z"></path><circle cx="12" cy="10" r="2.4"></circle></svg>
+              </span>
               <p><strong>所在地</strong><br>〒907-0243 沖縄県石垣市宮良 XXX-XXX</p>
             </div>
-            <div>
-              <span class="access-icon">○</span>
+            <div class="access-info-item">
+              <span class="access-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><path d="M12 7v5l3 2"></path></svg>
+              </span>
               <p><strong>見学時間</strong><br>9:00 - 17:00（要予約）<br>農作業の状況により調整させていただきます。</p>
             </div>
-            <div>
-              <span class="access-icon">■</span>
+            <div class="access-info-item">
+              <span class="access-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 15h16l-2-5H6l-2 5Z"></path><path d="M6 15v3"></path><path d="M18 15v3"></path><circle cx="7" cy="18" r="1.7"></circle><circle cx="17" cy="18" r="1.7"></circle><path d="M8 10V7h8v3"></path></svg>
+              </span>
               <p><strong>アクセス</strong><br>新石垣空港から車で約25分<br>駐車スペースあり（事前にお知らせください）</p>
             </div>
           </div>
+          <a class="access-cta" href="#contact">見学について相談する<span aria-hidden="true">→</span></a>
           <address>
             株式会社GY<br>
             〒123-4567 沖縄県石垣市宮良 XXX-XXX
@@ -152,7 +197,7 @@
         <div class="map-frame">
           <iframe
             title="株式会社GY 周辺地図"
-            src="https://www.google.com/maps?q=%E6%B2%96%E7%B8%84%E7%9C%8C%E7%9F%B3%E5%9E%A3%E5%B8%82%E5%AE%AE%E8%89%AF&output=embed"
+            src="https://www.google.com/maps?q=%E6%B2%96%E7%B8%84%E7%9C%8C%E7%9F%B3%E5%9E%A3%E5%B8%82%E5%AE%AE%E8%89%AF&z=13&output=embed"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             allowfullscreen>
@@ -163,23 +208,44 @@
 
     <section class="contact-section" id="contact" aria-labelledby="contact-title">
       <div class="contact-inner">
-        <p class="eyebrow">Contact</p>
-        <h2 id="contact-title">出荷・見学・お取引のご相談</h2>
+        <p class="contact-label">Contact</p>
+        <h2 class="contact-title" id="contact-title">
+          <span>出荷・見学・</span>
+          <span>お取引のご相談</span>
+        </h2>
+        <div class="contact-divider" aria-hidden="true"></div>
         <p>商品や畑の見学については、下記よりお問い合わせください。</p>
         <div class="contact-actions">
-          <a class="button button-primary" href="mailto:info@example.com">メールで問い合わせる</a>
-          <a class="button button-outline" href="tel:0312345678">03-1234-5678</a>
+          <a class="contact-button contact-button--mail" href="mailto:info@example.com">メールで問い合わせる</a>
+          <a class="contact-button contact-button--tel" href="tel:0312345678">03-1234-5678</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div>
-      <img src="./img/logo_transparent.png" alt="株式会社GY" width="1122" height="1402" loading="lazy">
-      <p>株式会社GY</p>
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <img src="./img/logo_transparent.png" alt="株式会社GY" width="1122" height="1402" loading="lazy">
+        <div>
+          <p class="site-footer__name">株式会社GY</p>
+          <p class="site-footer__address">〒907-0243 沖縄県石垣市宮良 XXX-XXX</p>
+        </div>
+      </div>
+      <nav class="site-footer__nav" aria-label="フッターナビゲーション">
+        <a href="#about">私たち</a>
+        <a href="./products.html">商品</a>
+        <a href="./achievements.html">実績</a>
+        <a href="#farm">農園のこと</a>
+        <a href="#access">アクセス</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
+      <div class="site-footer__contact">
+        <a href="tel:0312345678">03-1234-5678</a>
+        <a href="mailto:info@example.com">info@example.com</a>
+      </div>
     </div>
-    <small>&copy; GY Co., Ltd. All Rights Reserved.</small>
+    <small class="site-footer__copyright">&copy; GY Co., Ltd. All Rights Reserved.</small>
   </footer>
 </body>
 </html>

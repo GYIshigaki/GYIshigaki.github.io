@@ -49,6 +49,7 @@ img/item/onion/
 ```yaml
 name: たまねぎ
 label: Vegetable
+origin: Ishigaki
 order: 1
 featured: true
 intro: |

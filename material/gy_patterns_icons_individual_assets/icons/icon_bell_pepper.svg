@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none">
+<title>icon_bell_pepper</title>
+<defs>
+<style><![CDATA[
+.line { stroke: #284C3A; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.line-thin { stroke: #284C3A; stroke-width: 4.6; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.accent { stroke: #C99A45; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.fill-green { fill: #284C3A; }
+.fill-sage { fill: #8BAA78; }
+.fill-gold { fill: #C99A45; }
+]]></style>
+<filter id="soften" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="0.15"/></filter>
+
+</defs>
+
+<g opacity="0.96" filter="url(#soften)">
+
+<path class="line" d="M119 60 C95 41 54 60 48 113 C42 166 72 215 113 207 C126 205 137 205 150 207 C191 215 221 166 215 113 C209 60 168 41 143 60 C136 66 126 66 119 60 Z"/>
+<path class="line-thin" d="M128 65 C119 93 116 133 122 204" opacity="0.52"/>
+<path class="line-thin" d="M142 60 C155 89 160 134 151 205" opacity="0.52"/>
+<path class="line" d="M121 56 C121 43 130 31 144 27 C147 42 141 54 130 62"/>
+
+</g>
+<g opacity="0.8"></g>
+
+</svg>

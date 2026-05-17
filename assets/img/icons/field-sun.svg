@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none">
+<title>icon_field_sun</title>
+<defs>
+<style><![CDATA[
+.line { stroke: #284C3A; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.line-thin { stroke: #284C3A; stroke-width: 4.6; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.accent { stroke: #C99A45; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.fill-green { fill: #284C3A; }
+.fill-sage { fill: #8BAA78; }
+.fill-gold { fill: #C99A45; }
+]]></style>
+<filter id="soften" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="0.15"/></filter>
+
+</defs>
+
+<g opacity="0.96" filter="url(#soften)">
+
+<path class="line" d="M40 177 C75 143 103 132 128 132 C154 132 181 143 216 177"/>
+<path class="line-thin" d="M50 201 C88 181 110 175 128 175 C147 175 169 181 207 201"/>
+<path class="line-thin" d="M68 224 C98 213 116 209 128 209 C141 209 159 213 188 224"/>
+<path class="line" d="M91 121 C91 83 116 56 128 56 C140 56 165 83 165 121"/>
+<path class="accent" d="M128 32 V48 M72 70 L86 83 M200 70 L186 83"/>
+
+</g>
+<g opacity="0.8"></g>
+
+</svg>

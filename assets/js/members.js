@@ -1,11 +1,11 @@
 window.GY_MEMBERS = [
   {
-    "id": "genta",
-    "name": "げんた",
+    "id": "gen",
+    "name": "げん",
     "role": "畑の管理・収穫",
     "intro": "作物の状態を見ながら、日々の畑の管理と収穫を担当しています。",
     "order": 1,
-    "image": "./img/member/genta/image.png"
+    "image": "./img/member/gen/image.png"
   },
   {
     "id": "yutaro",

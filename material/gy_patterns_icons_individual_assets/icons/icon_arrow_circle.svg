@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none">
+<title>icon_arrow_circle</title>
+<defs>
+<style><![CDATA[
+.line { stroke: #284C3A; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.line-thin { stroke: #284C3A; stroke-width: 4.6; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.accent { stroke: #C99A45; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.fill-green { fill: #284C3A; }
+.fill-sage { fill: #8BAA78; }
+.fill-gold { fill: #C99A45; }
+]]></style>
+<filter id="soften" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="0.15"/></filter>
+
+</defs>
+
+<g opacity="0.96" filter="url(#soften)">
+
+<circle class="line" cx="128" cy="128" r="87"/>
+<path class="line" d="M86 130 H164"/>
+<path class="line" d="M137 96 L169 130 L137 164"/>
+
+</g>
+<g opacity="0.8"></g>
+
+</svg>

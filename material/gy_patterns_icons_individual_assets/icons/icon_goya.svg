@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none">
+<title>icon_goya</title>
+<defs>
+<style><![CDATA[
+.line { stroke: #284C3A; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.line-thin { stroke: #284C3A; stroke-width: 4.6; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.accent { stroke: #C99A45; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.fill-green { fill: #284C3A; }
+.fill-sage { fill: #8BAA78; }
+.fill-gold { fill: #C99A45; }
+]]></style>
+<filter id="soften" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="0.15"/></filter>
+
+</defs>
+
+<g opacity="0.96" filter="url(#soften)">
+
+<path class="line" d="M86 36 C60 75 54 137 79 191 C94 223 123 233 146 207 C180 168 181 80 142 42 C124 24 101 21 86 36 Z"/>
+<path class="line-thin" d="M117 38 C100 83 98 156 125 216" opacity="0.65"/>
+<path class="line-thin" d="M87 64 C118 78 142 79 163 66" opacity="0.45"/>
+<path class="line-thin" d="M72 126 C111 139 147 139 179 126" opacity="0.45"/>
+<path class="line-thin" d="M83 183 C111 195 137 196 161 185" opacity="0.45"/>
+<circle class="fill-sage" cx="101" cy="83" r="5" opacity="0.6"/>
+<circle class="fill-sage" cx="139" cy="102" r="5" opacity="0.6"/>
+<circle class="fill-sage" cx="93" cy="145" r="5" opacity="0.6"/>
+<circle class="fill-sage" cx="149" cy="160" r="5" opacity="0.6"/>
+
+</g>
+<g opacity="0.8"></g>
+
+</svg>

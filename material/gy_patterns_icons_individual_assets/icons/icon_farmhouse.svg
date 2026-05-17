@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none">
+<title>icon_farmhouse</title>
+<defs>
+<style><![CDATA[
+.line { stroke: #284C3A; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.line-thin { stroke: #284C3A; stroke-width: 4.6; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.accent { stroke: #C99A45; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.fill-green { fill: #284C3A; }
+.fill-sage { fill: #8BAA78; }
+.fill-gold { fill: #C99A45; }
+]]></style>
+<filter id="soften" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="0.15"/></filter>
+
+</defs>
+
+<g opacity="0.96" filter="url(#soften)">
+
+<path class="line" d="M40 122 L128 54 L216 122"/>
+<path class="line" d="M62 116 V210 H196 V116"/>
+<rect class="line-thin" x="111" y="151" width="34" height="59" rx="3"/>
+<rect class="line-thin" x="78" y="137" width="28" height="28" rx="3"/>
+<rect class="line-thin" x="157" y="137" width="28" height="28" rx="3"/>
+<path class="accent" d="M24 220 C58 203 88 198 128 202 C168 198 198 203 232 220" opacity="0.6"/>
+
+</g>
+<g opacity="0.8"></g>
+
+</svg>

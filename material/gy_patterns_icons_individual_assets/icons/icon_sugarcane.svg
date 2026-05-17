@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none">
+<title>icon_sugarcane</title>
+<defs>
+<style><![CDATA[
+.line { stroke: #284C3A; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.line-thin { stroke: #284C3A; stroke-width: 4.6; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.accent { stroke: #C99A45; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.fill-green { fill: #284C3A; }
+.fill-sage { fill: #8BAA78; }
+.fill-gold { fill: #C99A45; }
+]]></style>
+<filter id="soften" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="0.15"/></filter>
+
+</defs>
+
+<g opacity="0.96" filter="url(#soften)">
+
+<path class="line" d="M80 218 L112 38"/>
+<path class="line" d="M122 220 L154 45"/>
+<path class="line-thin" d="M92 151 L143 160 M101 102 L151 112 M112 52 L160 63" opacity="0.55"/>
+<path class="line" d="M104 88 C65 76 46 50 36 27 C75 33 101 52 119 86"/>
+<path class="line" d="M144 116 C185 95 207 67 216 35 C175 45 151 72 137 112"/>
+
+</g>
+<g opacity="0.8"></g>
+
+</svg>

@@ -1,4 +1,11 @@
 (() => {
+  if (window.location.hash && window.history.replaceState) {
+    window.history.replaceState(null, document.title, window.location.pathname + window.location.search);
+    window.addEventListener("load", () => {
+      window.scrollTo(0, 0);
+    }, { once: true });
+  }
+
   const body = document.body;
   const menu = document.querySelector("[data-menu]");
   const menuButton = document.querySelector("[data-menu-button]");
@@ -80,12 +87,15 @@
 
       list.innerHTML = items.map((item) => `
         <article class="product-card">
-          <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.name)}" width="768" height="1024" loading="lazy">
-          <div>
-            <p class="product-label">${escapeHtml(item.label)}</p>
+          <img class="product-card__image" src="${escapeHtml(item.image)}" alt="${escapeHtml(item.name)}" width="768" height="1024" loading="lazy">
+          <div class="product-card__body">
+            <p class="product-label product-card__meta">
+              <span>${escapeHtml(item.label)}</span>
+              <span>${escapeHtml(item.origin || "Ishigaki")}</span>
+            </p>
             <h3>${escapeHtml(item.name)}</h3>
             <p>${escapeHtml(item.intro)}</p>
-            <a class="product-arrow" href="./products.html" aria-label="${escapeHtml(item.name)}を見る">→</a>
+            <a class="product-card__link" href="./products.html" aria-label="${escapeHtml(item.name)}を見る"></a>
           </div>
         </article>
       `).join("");

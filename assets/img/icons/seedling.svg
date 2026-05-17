@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" fill="none">
+<title>icon_seedling</title>
+<defs>
+<style><![CDATA[
+.line { stroke: #284C3A; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.line-thin { stroke: #284C3A; stroke-width: 4.6; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.accent { stroke: #C99A45; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.fill-green { fill: #284C3A; }
+.fill-sage { fill: #8BAA78; }
+.fill-gold { fill: #C99A45; }
+]]></style>
+<filter id="soften" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="0.15"/></filter>
+
+</defs>
+
+<g opacity="0.96" filter="url(#soften)">
+
+<path class="line" d="M128 204 V126"/>
+<path class="line" d="M128 136 C92 134 62 105 58 67 C96 66 127 90 128 136 Z"/>
+<path class="line" d="M129 125 C163 108 188 75 189 38 C151 43 128 76 129 125 Z"/>
+<path class="accent" d="M62 211 H194" opacity="0.65"/>
+<path class="line-thin" d="M83 225 H176" opacity="0.55"/>
+
+</g>
+<g opacity="0.8"></g>
+
+</svg>
