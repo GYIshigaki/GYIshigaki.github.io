@@ -1,0 +1,1516 @@
+:root {
+  --color-ink: #243128;
+  --color-muted: #68746d;
+  --color-paper: #fffdf7;
+  --color-cream: #f4efe3;
+  --color-leaf: #31573f;
+  --color-leaf-dark: #1f392b;
+  --color-sun: #d59a3a;
+  --color-line: #ded6c8;
+  --shadow-soft: 0 22px 70px rgba(34, 49, 40, 0.14);
+  --header-height: 78px;
+  font-family: "Hiragino Sans", "Yu Gothic", "YuGothic", "Noto Sans JP", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+
+body {
+  margin: 0;
+  color: var(--color-ink);
+  background-color: var(--color-paper);
+  background-image: url("../img/decor/paper-cream.png");
+  background-position: center top;
+  background-repeat: repeat;
+  background-size: 560px auto;
+  line-height: 1.8;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+body.menu-open::before {
+  position: fixed;
+  inset: 0;
+  z-index: 58;
+  content: "";
+  background: rgba(31, 57, 43, 0.38);
+}
+
+body.menu-open .site-header {
+  z-index: 100;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font: inherit;
+}
+
+.sr-only,
+.skip-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link:focus {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 100;
+  width: auto;
+  height: auto;
+  padding: 10px 14px;
+  clip: auto;
+  color: #fff;
+  background: var(--color-leaf-dark);
+  border-radius: 999px;
+}
+
+.site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 14px clamp(18px, 4vw, 56px);
+  background-color: rgba(255, 253, 247, 0.94);
+  background-image: url("../img/decor/paper-cream.png");
+  background-position: center top;
+  background-repeat: repeat;
+  background-size: 560px auto;
+  border-bottom: 1px solid rgba(222, 214, 200, 0.7);
+  backdrop-filter: blur(16px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 86px;
+  height: 48px;
+  overflow: hidden;
+}
+
+.brand img {
+  width: auto;
+  height: 44px;
+  object-fit: contain;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 3vw, 36px);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.site-nav a {
+  position: relative;
+  text-decoration: none;
+}
+
+.site-nav a::after {
+  position: absolute;
+  right: 0;
+  bottom: -8px;
+  left: 0;
+  height: 2px;
+  content: "";
+  background: var(--color-sun);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
+
+.site-nav a:hover::after,
+.site-nav a:focus-visible::after,
+.site-nav a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+.menu-button {
+  display: none;
+}
+
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  align-items: end;
+  padding: calc(var(--header-height) + 64px) clamp(18px, 6vw, 84px) 66px;
+  overflow: hidden;
+  color: #fff;
+  background: var(--color-leaf-dark);
+}
+
+.hero-slider,
+.hero-slide,
+.hero::after {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-slide {
+  opacity: 0;
+  background-position: center;
+  background-size: cover;
+  transform: scale(1.03);
+  transition: opacity 900ms ease, transform 6s ease;
+}
+
+.hero-slide-1 {
+  background-image: url("../../img/slider/image1.jpg");
+}
+
+.hero-slide-2 {
+  background-image: url("../../img/slider/image2.jpg");
+}
+
+.hero-slide-3 {
+  background-image: url("../../img/slider/image3.jpg");
+}
+
+.hero-slide-4 {
+  background-image: url("../../img/slider/image4.jpg");
+}
+
+.hero-slide-5 {
+  background-image: url("../../img/slider/image5.jpg");
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero::after {
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(18, 28, 22, 0.78), rgba(18, 28, 22, 0.28) 56%, rgba(18, 28, 22, 0.1)),
+    linear-gradient(0deg, rgba(18, 28, 22, 0.48), rgba(18, 28, 22, 0.08));
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--color-sun);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero h1,
+.section h2,
+.story-copy h2,
+.contact-inner h2 {
+  margin: 0;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", YuMincho, serif;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.25;
+}
+
+.hero h1 {
+  max-width: 9em;
+  font-size: clamp(3rem, 8vw, 6.8rem);
+}
+
+.hero-copy {
+  max-width: 620px;
+  margin: 28px 0 0;
+  font-size: clamp(1rem, 1.6vw, 1.18rem);
+}
+
+.hero-actions,
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  transition: transform 180ms ease, background 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  color: #fff;
+  background: var(--color-leaf);
+}
+
+.button-primary:hover,
+.button-primary:focus-visible {
+  background: var(--color-leaf-dark);
+}
+
+.button-ghost {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.button-outline {
+  color: var(--color-leaf-dark);
+  border-color: var(--color-leaf);
+  background: transparent;
+}
+
+.button-outline:hover,
+.button-outline:focus-visible {
+  color: #fff;
+  background: var(--color-leaf);
+}
+
+.hero-note {
+  position: absolute;
+  right: clamp(18px, 4vw, 56px);
+  bottom: 28px;
+  z-index: 1;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.84rem;
+  letter-spacing: 0.08em;
+  writing-mode: vertical-rl;
+}
+
+.section {
+  padding: clamp(72px, 10vw, 128px) clamp(18px, 6vw, 84px);
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  gap: clamp(36px, 7vw, 96px);
+  align-items: center;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.section-copy {
+  max-width: 560px;
+}
+
+.section-copy h2,
+.section-heading h2,
+.story-copy h2,
+.contact-inner h2 {
+  font-size: clamp(2rem, 4.8vw, 4.1rem);
+}
+
+.section-copy p,
+.section-heading p,
+.story-copy p,
+.contact-inner p,
+address {
+  color: var(--color-muted);
+  font-style: normal;
+}
+
+.photo-pair {
+  display: grid;
+  grid-template-columns: 1fr 0.72fr;
+  gap: 18px;
+  align-items: end;
+}
+
+.photo-pair img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: var(--shadow-soft);
+}
+
+.photo-pair img:nth-child(2) {
+  transform: translateY(42px);
+}
+
+.products-section {
+  background: var(--color-cream);
+}
+
+.section-heading {
+  max-width: 760px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 1220px;
+  margin: 0 auto;
+}
+
+.product-card {
+  overflow: hidden;
+  background: var(--color-paper);
+  border: 1px solid rgba(222, 214, 200, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 12px 34px rgba(34, 49, 40, 0.08);
+}
+
+.product-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1.18;
+  object-fit: cover;
+}
+
+.product-card div {
+  padding: 20px;
+}
+
+.product-card h3,
+.person-card h3 {
+  margin: 0 0 6px;
+  font-size: 1.22rem;
+  line-height: 1.35;
+}
+
+.product-card p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.product-label {
+  margin-bottom: 8px;
+  color: var(--color-sun) !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.78rem !important;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.products-section > .button {
+  margin: 34px auto 0;
+}
+
+.page-hero {
+  min-height: 56svh;
+  display: grid;
+  align-items: end;
+  padding: calc(var(--header-height) + 72px) clamp(18px, 6vw, 84px) 72px;
+  color: #fff;
+  background:
+    linear-gradient(90deg, rgba(18, 28, 22, 0.76), rgba(18, 28, 22, 0.22)),
+    url("../../img/farm/LINE_ALBUM_HP素材_231117_28.jpg") center / cover;
+}
+
+.achievements-page-hero {
+  background:
+    linear-gradient(90deg, rgba(18, 28, 22, 0.78), rgba(18, 28, 22, 0.24)),
+    url("../../img/farm/LINE_ALBUM_HP素材_231117_31.jpg") center / cover;
+}
+
+.page-hero > div {
+  max-width: 760px;
+}
+
+.page-hero h1 {
+  margin: 0;
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", YuMincho, serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  line-height: 1.18;
+  letter-spacing: 0;
+}
+
+.page-hero p:last-child {
+  max-width: 620px;
+  margin: 22px 0 0;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: clamp(1rem, 1.6vw, 1.18rem);
+}
+
+.products-page-section {
+  background: var(--color-paper);
+}
+
+.product-grid-wide {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.product-slider-shell {
+  max-width: 1220px;
+  margin: 0 auto;
+}
+
+.achievements-intro {
+  background: #fff;
+}
+
+.achievement-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.achievement-stats div {
+  min-height: 156px;
+  display: grid;
+  align-content: center;
+  gap: 8px;
+  padding: 22px;
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  background: var(--color-paper);
+  box-shadow: 0 12px 34px rgba(34, 49, 40, 0.08);
+}
+
+.achievement-stats strong {
+  color: var(--color-leaf-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 4.5vw, 3.8rem);
+  line-height: 1;
+}
+
+.achievement-stats span {
+  color: var(--color-muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.achievements-section {
+  background: var(--color-cream);
+}
+
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 1220px;
+  margin: 0 auto;
+}
+
+.achievement-card {
+  overflow: hidden;
+  border: 1px solid rgba(222, 214, 200, 0.9);
+  border-radius: 8px;
+  background: var(--color-paper);
+  box-shadow: 0 12px 34px rgba(34, 49, 40, 0.08);
+}
+
+.achievement-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1.08;
+  object-fit: cover;
+}
+
+.achievement-card div {
+  padding: 20px;
+}
+
+.achievement-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+  line-height: 1.35;
+}
+
+.achievement-card p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.achievement-label {
+  margin-bottom: 8px !important;
+  color: var(--color-sun) !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.78rem !important;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.timeline-section {
+  background: #fff;
+}
+
+.timeline {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline li {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 26px;
+  padding: 28px 0;
+  border-top: 1px solid var(--color-line);
+}
+
+.timeline li:last-child {
+  border-bottom: 1px solid var(--color-line);
+}
+
+.timeline time {
+  color: var(--color-leaf);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.timeline h3 {
+  margin: 0 0 6px;
+  font-size: 1.18rem;
+}
+
+.timeline p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.story-band {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  min-height: 680px;
+  background: var(--color-leaf-dark);
+  color: #fff;
+}
+
+.story-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+}
+
+.story-copy {
+  align-self: center;
+  padding: clamp(56px, 8vw, 100px);
+}
+
+.story-copy p,
+.story-copy dd {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.farm-facts {
+  display: grid;
+  gap: 18px;
+  margin: 34px 0 0;
+}
+
+.farm-facts div {
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.farm-facts dt {
+  color: var(--color-sun);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.farm-facts dd {
+  margin: 2px 0 0;
+}
+
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 360px));
+  justify-content: center;
+  gap: 22px;
+}
+
+.person-card {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: 18px;
+  align-items: center;
+  padding: 18px;
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.person-card img {
+  width: 112px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+}
+
+.person-card p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.person-role {
+  margin-bottom: 6px !important;
+  color: var(--color-sun) !important;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.access-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(255, 253, 247, 0.76), rgba(255, 253, 247, 0.76)),
+    url("../img/decor/paper-cream.png") center / 720px auto;
+}
+
+.access-section::before,
+.access-section::after {
+  position: absolute;
+  content: "";
+  background: url("../img/decor/crop-sketches.png") center / contain no-repeat;
+  opacity: 0.16;
+  pointer-events: none;
+}
+
+.access-section::before {
+  left: -80px;
+  bottom: -40px;
+  width: min(32vw, 420px);
+  aspect-ratio: 1;
+}
+
+.access-section::after {
+  right: -90px;
+  top: 18%;
+  width: min(26vw, 360px);
+  aspect-ratio: 1;
+  transform: scaleX(-1);
+}
+
+.access-section .section-grid {
+  position: relative;
+  z-index: 1;
+}
+
+.access-section .section-copy h2 {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.access-section .section-copy h2::after,
+.contact-inner h2::after {
+  display: block;
+  width: 54px;
+  height: 2px;
+  margin-top: 24px;
+  content: "";
+  background: var(--color-sun);
+}
+
+.access-info {
+  display: grid;
+  gap: 0;
+  margin-top: 28px;
+  border-top: 1px solid rgba(222, 199, 163, 0.62);
+}
+
+.access-info div {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 18px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(222, 199, 163, 0.62);
+}
+
+.access-info p {
+  margin: 0;
+  color: var(--color-ink);
+}
+
+.access-info strong {
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.access-icon {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  color: var(--color-leaf-dark);
+  background: rgba(49, 87, 63, 0.12);
+  border-radius: 50%;
+  font-size: 0.72rem;
+}
+
+.access-section address {
+  display: none;
+}
+
+.map-frame {
+  min-height: 430px;
+  overflow: hidden;
+  padding: 18px;
+  border: 1px solid rgba(222, 199, 163, 0.76);
+  border-radius: 18px;
+  background:
+    linear-gradient(rgba(255, 253, 247, 0.72), rgba(255, 253, 247, 0.72)),
+    url("../img/decor/paper-cream.png") center / 560px auto;
+  box-shadow: 0 18px 38px rgba(54, 41, 22, 0.16);
+}
+
+.map-frame iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+  border: 0;
+  border-radius: 12px;
+}
+
+.contact-section {
+  position: relative;
+  padding: clamp(72px, 9vw, 120px) clamp(18px, 6vw, 84px);
+  overflow: hidden;
+  color: #fff;
+  background:
+    linear-gradient(rgba(16, 62, 43, 0.9), rgba(16, 62, 43, 0.9)),
+    url("../../img/farm/LINE_ALBUM_HP素材_231117_39.jpg") center / cover;
+}
+
+.contact-section::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    url("../img/decor/ornament-lines.png") 9% 42% / 240px auto no-repeat,
+    url("../img/decor/ornament-lines.png") 91% 42% / 240px auto no-repeat;
+  opacity: 0.32;
+  pointer-events: none;
+}
+
+.contact-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-inner p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.contact-inner h2::after {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.contact-actions {
+  justify-content: center;
+}
+
+.contact-section .button-outline {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.72);
+}
+
+.contact-section .button-outline:hover,
+.contact-section .button-outline:focus-visible {
+  color: var(--color-leaf-dark);
+  background: #fff;
+}
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px clamp(18px, 6vw, 84px);
+  color: var(--color-muted);
+  background: var(--color-paper);
+  border-top: 1px solid var(--color-line);
+}
+
+.site-footer div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.site-footer img {
+  width: auto;
+  height: 54px;
+  object-fit: contain;
+}
+
+.site-footer p,
+.site-footer small {
+  margin: 0;
+}
+
+body {
+  background-color: #fbf4e5;
+  background-image: url("../img/decor/paper-cream.png");
+  background-size: 720px auto;
+}
+
+.site-header {
+  background-color: rgba(255, 250, 239, 0.96);
+  background-image: url("../img/decor/paper-cream.png");
+  background-size: 620px auto;
+  box-shadow: 0 10px 28px rgba(54, 41, 22, 0.08);
+}
+
+.site-header::after {
+  position: absolute;
+  right: 0;
+  bottom: -18px;
+  left: 0;
+  height: 18px;
+  content: "";
+  background: url("../img/decor/ornament-lines.png") center / auto 28px repeat-x;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.brand {
+  width: 150px;
+  height: 60px;
+}
+
+.brand img {
+  height: 56px;
+}
+
+.hero {
+  min-height: clamp(560px, 82svh, 860px);
+  margin-top: 0;
+  border-bottom: 1px solid rgba(222, 199, 163, 0.65);
+}
+
+.hero::before {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  height: 18px;
+  content: "";
+  background: url("../img/decor/ornament-lines.png") center / auto 28px repeat-x;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.hero + .people-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero + .people-section::before,
+.products-section::after {
+  position: absolute;
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+  opacity: 0.78;
+}
+
+.hero + .people-section::before {
+  top: 28px;
+  left: -28px;
+  width: min(26vw, 280px);
+  aspect-ratio: 1;
+  background-image: url("../img/decor/leaf-flower-left.png");
+}
+
+.products-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(246, 235, 216, 0.74), rgba(246, 235, 216, 0.74)),
+    url("../img/decor/paper-cream.png") center / 720px auto;
+}
+
+.products-section::after {
+  right: -34px;
+  top: 28px;
+  width: min(22vw, 250px);
+  aspect-ratio: 1;
+  background-image: url("../img/decor/leaf-corner-right.png");
+}
+
+.section-heading {
+  position: relative;
+  z-index: 1;
+}
+
+.section-heading h2 {
+  color: var(--color-leaf-dark);
+}
+
+.people-grid {
+  grid-template-columns: repeat(2, minmax(0, 500px));
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.person-card {
+  position: relative;
+  grid-template-columns: 190px 1fr;
+  min-height: 250px;
+  padding: 34px 42px;
+  overflow: hidden;
+  border-color: rgba(222, 199, 163, 0.78);
+  border-radius: 8px;
+  background:
+    linear-gradient(rgba(255, 253, 247, 0.92), rgba(255, 253, 247, 0.92)),
+    url("../img/decor/paper-cream.png") center / 620px auto;
+  box-shadow: 0 18px 36px rgba(66, 50, 29, 0.12);
+}
+
+.person-card::after {
+  position: absolute;
+  right: -20px;
+  bottom: -18px;
+  width: 180px;
+  aspect-ratio: 1;
+  content: "";
+  background: url("../img/decor/crop-sketches.png") right bottom / 360px auto no-repeat;
+  opacity: 0.2;
+}
+
+.person-card img {
+  width: 170px;
+  box-shadow: 0 8px 20px rgba(54, 41, 22, 0.12);
+}
+
+.person-card h3 {
+  color: var(--color-leaf-dark);
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", YuMincho, serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+.person-card div {
+  position: relative;
+  z-index: 1;
+}
+
+.person-role,
+.product-label {
+  color: var(--color-sun) !important;
+}
+
+.product-grid {
+  position: relative;
+  z-index: 1;
+}
+
+.product-card {
+  position: relative;
+  border-color: rgba(222, 199, 163, 0.8);
+  background:
+    linear-gradient(rgba(255, 253, 247, 0.9), rgba(255, 253, 247, 0.9)),
+    url("../img/decor/paper-cream.png") center / 560px auto;
+  box-shadow: 0 14px 30px rgba(66, 50, 29, 0.12);
+}
+
+.product-card div {
+  position: relative;
+  min-height: 160px;
+  padding-right: 58px;
+}
+
+.product-card h3 {
+  color: var(--color-leaf-dark);
+  font-family: "Hiragino Mincho ProN", "Yu Mincho", YuMincho, serif;
+}
+
+.product-card div::after {
+  position: absolute;
+  right: 16px;
+  bottom: 12px;
+  width: 80px;
+  height: 56px;
+  content: "";
+  background: url("../img/decor/crop-sketches.png") center / 220px auto no-repeat;
+  opacity: 0.16;
+}
+
+.product-arrow {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  z-index: 1;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  color: #fff;
+  background: var(--color-leaf-dark);
+  border-radius: 50%;
+  font-size: 1.2rem;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.products-section > .button {
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media (max-width: 1120px) {
+  .site-nav {
+    gap: 18px;
+    font-size: 0.86rem;
+  }
+}
+
+@media (max-width: 1020px) {
+  .product-grid,
+  .achievement-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .section-grid,
+  .story-band {
+    grid-template-columns: 1fr;
+  }
+
+  .story-copy {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --header-height: 96px;
+  }
+
+  .site-header {
+    justify-content: center;
+    padding: 12px 18px;
+    background-color: rgba(255, 253, 247, 0.98);
+    background-image: url("../img/decor/paper-cream.png");
+    background-position: center top;
+    background-repeat: repeat;
+    background-size: 520px auto;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .brand {
+    position: relative;
+    z-index: 61;
+    width: 132px;
+    height: 70px;
+    pointer-events: auto;
+  }
+
+  .brand img {
+    width: auto;
+    height: 64px;
+  }
+
+  .menu-button {
+    position: relative;
+    z-index: 80;
+    display: flex;
+    width: 64px;
+    height: 64px;
+    align-items: stretch;
+    justify-content: center;
+    flex-direction: column;
+    gap: 9px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    overflow: visible;
+  }
+
+  .site-header .menu-button {
+    position: absolute;
+    top: max(16px, env(safe-area-inset-top));
+    right: max(20px, env(safe-area-inset-right));
+    z-index: 90;
+  }
+
+  .menu-button span:not(.sr-only) {
+    width: 32px;
+    height: 3px;
+    background: var(--color-ink);
+    transition: transform 180ms ease, opacity 180ms ease;
+  }
+
+  .menu-button[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(12px) rotate(45deg);
+  }
+
+  .menu-button[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-button[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-12px) rotate(-45deg);
+  }
+
+  .site-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: auto;
+    z-index: 75;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: min(86vw, 360px);
+    max-width: calc(100vw - 24px);
+    height: 100vh;
+    height: 100dvh;
+    visibility: hidden;
+    padding: calc(env(safe-area-inset-top) + 92px) max(22px, env(safe-area-inset-right)) 34px 22px;
+    overflow-y: auto;
+    border-left: 1px solid var(--color-line);
+    background-color: rgba(255, 253, 247, 0.98);
+    background-image: url("../img/decor/paper-cream.png");
+    background-position: center top;
+    background-repeat: repeat;
+    background-size: 520px auto;
+    font-size: 1.32rem;
+    opacity: 0;
+    box-shadow: -20px 0 50px rgba(34, 49, 40, 0.18);
+    transform: translateX(100%);
+    transition: opacity 180ms ease, visibility 180ms ease, transform 180ms ease;
+  }
+
+  .site-nav a {
+    width: 100%;
+    max-width: 280px;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(222, 214, 200, 0.42);
+    text-align: left;
+  }
+
+  .site-nav a::after {
+    display: none;
+  }
+
+  .site-nav.is-open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .hero {
+    min-height: 92svh;
+    padding: calc(var(--header-height) + 44px) 18px 58px;
+  }
+
+  .page-hero {
+    min-height: 360px;
+    padding: calc(var(--header-height) + 42px) 28px 48px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.7rem, 14vw, 4.5rem);
+  }
+
+  .hero-copy {
+    margin-top: 20px;
+  }
+
+  .hero-actions,
+  .contact-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .hero-note {
+    display: none;
+  }
+
+  .section {
+    padding: 64px 18px;
+  }
+
+  .products-page-section {
+    position: relative;
+    padding: 48px 18px 64px;
+  }
+
+  .products-page-section::before,
+  .products-page-section::after {
+    position: absolute;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.34;
+    pointer-events: none;
+  }
+
+  .products-page-section::before {
+    top: 10px;
+    left: -56px;
+    width: 180px;
+    aspect-ratio: 1;
+    background-image: url("../img/decor/leaf-corner-right.png");
+    transform: scaleX(-1) rotate(-8deg);
+  }
+
+  .products-page-section::after {
+    right: -64px;
+    top: 110px;
+    width: 160px;
+    aspect-ratio: 1;
+    background-image: url("../img/decor/leaf-flower-left.png");
+  }
+
+  .products-page-section .section-heading {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 30px;
+  }
+
+  .products-page-section .section-heading h2 {
+    font-size: clamp(2rem, 10vw, 3.2rem);
+  }
+
+  .photo-pair {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 0 clamp(8px, 4vw, 18px);
+  }
+
+  .photo-pair img {
+    aspect-ratio: 1 / 1.08;
+    border-radius: 28% 28% 24% 24% / 18% 18% 16% 16%;
+    box-shadow: 0 18px 44px rgba(34, 49, 40, 0.14);
+  }
+
+  .photo-pair img:nth-child(2) {
+    transform: none;
+  }
+
+  .product-grid,
+  .achievement-grid,
+  .achievement-stats,
+  .people-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .products-page-section .product-slider-shell {
+    position: relative;
+    z-index: 1;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .products-page-section .product-slider-shell::before {
+    display: none;
+  }
+
+  .products-page-section .product-grid-wide {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: none;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .product-card,
+  .achievement-card {
+    display: grid;
+    grid-template-columns: 42% 1fr;
+  }
+
+  .products-page-section .product-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    border: 1px solid rgba(222, 199, 163, 0.82);
+    border-radius: 8px;
+    box-shadow: 0 12px 26px rgba(66, 50, 29, 0.12);
+  }
+
+  .product-card img,
+  .achievement-card img {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .products-page-section .product-card img {
+    height: auto;
+    aspect-ratio: 1 / 0.86;
+  }
+
+  .product-card div,
+  .achievement-card div {
+    padding: 16px;
+  }
+
+  .products-page-section .product-card div {
+    min-height: 190px;
+    padding: 18px 16px 58px;
+  }
+
+  .products-page-section .product-card h3 {
+    font-size: 1.45rem;
+  }
+
+  .products-page-section .product-card p {
+    font-size: 0.92rem;
+  }
+
+  .products-page-section .product-arrow {
+    width: 38px;
+    height: 38px;
+  }
+
+  .achievement-stats div {
+    min-height: 120px;
+  }
+
+  .timeline li {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .story-band {
+    min-height: 0;
+  }
+
+  .story-copy {
+    padding: 54px 18px 64px;
+  }
+
+  .person-card {
+    grid-template-columns: 86px 1fr;
+  }
+
+  .person-card img {
+    width: 86px;
+  }
+
+  .map-frame,
+  .map-frame iframe {
+    min-height: 340px;
+  }
+
+  .access-section .section-grid {
+    gap: 30px;
+  }
+
+  .access-info div {
+    grid-template-columns: 36px 1fr;
+    gap: 14px;
+  }
+
+  .contact-section {
+    padding: 74px 18px;
+  }
+
+  .contact-inner h2 {
+    font-size: clamp(2.1rem, 10vw, 3.4rem);
+  }
+
+  .site-footer {
+    display: grid;
+    justify-items: start;
+    padding: 24px 18px;
+  }
+}
+
+@media (max-width: 420px) {
+  .product-card,
+  .achievement-card {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card img,
+  .achievement-card img {
+    aspect-ratio: 1.2;
+  }
+}

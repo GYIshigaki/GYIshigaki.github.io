@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="株式会社GYが石垣島で育てる野菜や果物の商品一覧です。">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; script-src 'self'; style-src 'self'; frame-src https://www.google.com; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="商品一覧 | 株式会社GY">
+  <meta property="og:description" content="石垣島の畑から届く、株式会社GYの商品一覧です。">
+  <meta property="og:image" content="./img/item/goya/image.jpg">
+  <title>商品一覧 | 株式会社GY</title>
+  <link rel="stylesheet" href="./assets/css/styles.css">
+  <script src="./assets/js/items.js" defer></script>
+  <script src="./assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
+
+  <header class="site-header" data-header>
+    <a class="brand" href="./index.html#top" aria-label="株式会社GY ホーム">
+      <img src="./img/logo_transparent.png" alt="株式会社GY" width="1122" height="1402">
+    </a>
+
+    <button class="menu-button" type="button" data-menu-button aria-controls="site-nav" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="sr-only">メニュー</span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" data-menu>
+      <a href="./index.html#about">私たち</a>
+      <a href="./products.html" aria-current="page">商品</a>
+      <a href="./achievements.html">実績</a>
+      <a href="./index.html#farm">農園のこと</a>
+      <a href="./index.html#access">アクセス</a>
+      <a href="./index.html#contact">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero products-page-hero" aria-labelledby="page-title">
+      <div>
+        <p class="eyebrow">Products</p>
+        <h1 id="page-title">商品一覧</h1>
+        <p>石垣島の畑から、旬に合わせてお届けする野菜と果物です。</p>
+      </div>
+    </section>
+
+    <section class="section products-section products-page-section" aria-labelledby="all-products-title">
+      <div class="section-heading">
+        <p class="eyebrow">Lineup</p>
+        <h2 id="all-products-title">すべての商品</h2>
+        <p>収穫状況により出荷できる品目は変わります。詳しい時期や数量はお問い合わせください。</p>
+      </div>
+
+      <div class="product-slider-shell">
+        <div class="product-grid product-grid-wide" data-items-list data-items-mode="all"></div>
+      </div>
+    </section>
+
+    <section class="contact-section" aria-labelledby="products-contact-title">
+      <div class="contact-inner">
+        <p class="eyebrow">Contact</p>
+        <h2 id="products-contact-title">商品について相談する</h2>
+        <p>収穫時期、数量、お取引についてはお気軽にお問い合わせください。</p>
+        <div class="contact-actions">
+          <a class="button button-primary" href="mailto:info@example.com">メールで問い合わせる</a>
+          <a class="button button-outline" href="./index.html#contact">会社情報を見る</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <img src="./img/logo_transparent.png" alt="株式会社GY" width="1122" height="1402" loading="lazy">
+      <p>株式会社GY</p>
+    </div>
+    <small>&copy; GY Co., Ltd. All Rights Reserved.</small>
+  </footer>
+</body>
+</html>

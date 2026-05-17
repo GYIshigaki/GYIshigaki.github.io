@@ -3,347 +3,183 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>株式会社GY</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    /* ハンバーガーメニューのアニメーション */
-    #mobile-menu {
-      transition: transform 0.3s ease-in-out;
-      transform: translateY(-100%);
-    }
-    #mobile-menu.open {
-      transform: translateY(0%);
-    }
-    .slider {
-      background-size: cover;
-      background-position: center;
-      transition: background-image 0.5s ease-in-out;
-    }
-    .writing-mode-vertical {
-      writing-mode: vertical-rl;
-      text-orientation: upright;
-    }
-    .writing-mode-vertical {
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
-    }
-    .mobile-menu {
-      top: 120px;
-    }
-  </style>
-  <script>
-
-    function toggleMenu() {
-      var menu = document.getElementById('mobile-menu');
-      menu.classList.toggle('hidden'); // hiddenクラスのトグル
-    }
-
-
-    const images = [
-      './img/slider/image1.jpg',
-      './img/slider/image2.jpg',
-      './img/slider/image3.jpg',
-      './img/slider/image4.jpg',
-      './img/slider/image5.jpg',
-      // ... 他の画像ファイルへのパス
-    ];
-    let currentImageIdx = 0;
-
-    function changeBackgroundImage() {
-      const slider = document.getElementById('slider');
-      slider.style.backgroundImage = `url('${images[currentImageIdx]}')`;
-      currentImageIdx = (currentImageIdx + 1) % images.length;
-    }
-
-    // 5秒ごとに背景画像を切り替え
-    setInterval(changeBackgroundImage, 5000);
-
-    // ページの読み込みが完了したら実行される関数
-    document.addEventListener('DOMContentLoaded', function() {
-      const loadMoreBtn = document.getElementById('load-more');
-      const hiddenProducts = document.querySelectorAll('.hidden-product');
-
-      loadMoreBtn.addEventListener('click', function() {
-        // "もっと見る" ボタンをクリックしたときに隠された商品を表示する
-        hiddenProducts.forEach(function(product) {
-          product.classList.remove('hidden');
-        });
-
-        // "もっと見る" ボタンを非表示にする
-        loadMoreBtn.classList.add('hidden');
-      });
-    });
-  </script>
+  <meta name="description" content="株式会社GYは、沖縄県石垣市で島の光と土に向き合いながら野菜や果物を育てる農園です。">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; script-src 'self'; style-src 'self'; frame-src https://www.google.com; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="株式会社GY | 石垣島の農園">
+  <meta property="og:description" content="沖縄県石垣市で、島の恵みをまっすぐ届ける農園です。">
+  <meta property="og:image" content="./img/slider/image1.jpg">
+  <title>株式会社GY | 石垣島の農園</title>
+  <link rel="preload" href="./img/slider/image1.jpg" as="image">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+  <script src="./assets/js/members.js" defer></script>
+  <script src="./assets/js/items.js" defer></script>
+  <script src="./assets/js/main.js" defer></script>
 </head>
-<body class="bg-white text-gray-800 pt-16">
-  <nav class="bg-white fixed w-full z-10 top-0 shadow">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-16">
+<body>
+  <a class="skip-link" href="#main">本文へ移動</a>
 
-        <!-- ロゴとモバイルメニューボタン -->
-        <div class="flex items-center justify-between w-full sm:w-auto">
-          <!-- ロゴ -->
-          <a href="#" aria-current="page" class="flex-shrink-0">
-            <img src="./img/logo.JPG" alt="ロゴ" class="h-8 w-auto sm:h-10">
-          </a>
-          <!-- ロゴ -->
-          
-          <!-- モバイルメニューボタン -->
-          <div class="sm:hidden">
-            <button type="button" class=" inline-flex items-center justify-center p-2 rounded-md text-gray-800 hover:text-gray-900 hover:bg-gray-200" onclick="toggleMenu()" aria-controls="mobile-menu" aria-expanded="false">
-              <span class="sr-only">メニューを開く</span>
-              <!-- アイコン -->
-              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
-              </svg>
-            </button>
-          </div>
-          <!-- モバイルメニューボタン -->
+  <header class="site-header" data-header>
+    <a class="brand" href="./index.html#top" aria-label="株式会社GY ホーム">
+      <img src="./img/logo_transparent.png" alt="株式会社GY" width="1122" height="1402">
+    </a>
+
+    <button class="menu-button" type="button" data-menu-button aria-controls="site-nav" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span class="sr-only">メニュー</span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" data-menu>
+      <a href="#about">私たち</a>
+      <a href="./products.html">商品</a>
+      <a href="./achievements.html">実績</a>
+      <a href="#farm">農園のこと</a>
+      <a href="#access">アクセス</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-slider" data-slider aria-hidden="true">
+        <span class="hero-slide hero-slide-1 is-active" data-slide></span>
+        <span class="hero-slide hero-slide-2" data-slide></span>
+        <span class="hero-slide hero-slide-3" data-slide></span>
+        <span class="hero-slide hero-slide-4" data-slide></span>
+        <span class="hero-slide hero-slide-5" data-slide></span>
+      </div>
+      <div class="hero-content">
+        <p class="eyebrow">Ishigaki Island Farm</p>
+        <h1 id="hero-title">島の光と土から、まっすぐに。</h1>
+        <p class="hero-copy">沖縄県石垣市で育てた野菜や果物を、日々の食卓へ。畑の息づかいが伝わる農産物づくりを続けています。</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="./products.html">商品を見る</a>
+          <a class="button button-ghost" href="#contact">相談する</a>
         </div>
-        <!-- ロゴとモバイルメニューボタン -->
+      </div>
+      <p class="hero-note">GY Farm / Okinawa Ishigaki</p>
+    </section>
 
-          <!-- デスクトップ版 ナビゲーションリンク -->
-          <div class="hidden sm:block sm:ml-6">
-            <div class="flex space-x-4 h-full">
-              <a href="#about"     class="text-gray-800 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium h-full flex items-center">私たち</a>
-              <a href="#featured"  class="text-gray-800 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium h-full flex items-center">ピックアップ</a>
-              <a href="#access"    class="text-gray-800 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium h-full flex items-center">アクセス</a>
-              <a href="#contact"   class="text-gray-800 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium h-full flex items-center">問い合わせ</a>
-              <a href="#instagram" class="text-gray-800 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium h-full flex items-center">Instagram</a>
+    <section class="section people-section" id="about" aria-labelledby="people-title">
+      <div class="section-heading">
+        <p class="eyebrow">Members</p>
+        <h2 id="people-title">つくり手</h2>
+        <p>石垣島の自然とともに、日々畑に向き合うつくり手たちをご紹介します。</p>
+      </div>
+      <div class="people-grid" data-members-list></div>
+    </section>
+
+    <section class="section about-section" aria-labelledby="about-title">
+      <div class="section-grid">
+        <div class="section-copy">
+          <p class="eyebrow">About Us</p>
+          <h2 id="about-title">南の島で、手をかけて育てる。</h2>
+          <p>石垣島の強い日差し、海風、雨のリズム。株式会社GYは、その土地らしさを大切にしながら、野菜と果物の状態を見て一つひとつ手を入れています。</p>
+          <p>商品だけでなく、つくり手や畑の背景まで伝わるように。日々の仕事をていねいに積み重ね、島の恵みをまっすぐ届けます。</p>
+        </div>
+        <div class="photo-pair" aria-label="農園の写真">
+          <img src="./img/farm/LINE_ALBUM_HP素材_231117_5.jpg" alt="収穫された農産物" width="1280" height="1280" loading="lazy">
+          <img src="./img/farm/LINE_ALBUM_HP素材_231117_48.jpg" alt="石垣島の農園風景" width="1280" height="1280" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="section products-section" id="products" aria-labelledby="products-title">
+      <div class="section-heading">
+        <p class="eyebrow">Products</p>
+        <h2 id="products-title">旬のおすすめ</h2>
+        <p>畑の状況に合わせて、今おすすめしたい農産物を紹介します。</p>
+      </div>
+
+      <div class="product-grid" data-items-list data-items-mode="featured"></div>
+
+      <a class="button button-outline" href="./products.html">すべての商品を見る</a>
+    </section>
+
+    <section class="story-band" id="farm" aria-labelledby="farm-title">
+      <div class="story-media">
+        <img src="./img/farm/LINE_ALBUM_HP素材_231117_21.jpg" alt="畑で育つ作物" width="1280" height="1280" loading="lazy">
+      </div>
+      <div class="story-copy">
+        <p class="eyebrow">Farm Story</p>
+        <h2 id="farm-title">畑の表情を、毎日見る。</h2>
+        <p>天候や土の湿り気、葉の色、実の張り。小さな変化を見逃さないことが、安定した味につながります。</p>
+        <dl class="farm-facts">
+          <div>
+            <dt>Location</dt>
+            <dd>沖縄県石垣市 宮良</dd>
+          </div>
+          <div>
+            <dt>Focus</dt>
+            <dd>野菜・果物の栽培</dd>
+          </div>
+          <div>
+            <dt>Style</dt>
+            <dd>地域に根ざした少量多品目</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section access-section" id="access" aria-labelledby="access-title">
+      <div class="section-grid">
+        <div class="section-copy">
+          <p class="eyebrow">Access</p>
+          <h2 id="access-title">畑の見学について</h2>
+          <p>見学をご希望の場合は、事前にお問い合わせください。収穫や天候の都合に合わせて、無理のない日程をご案内します。</p>
+          <div class="access-info">
+            <div>
+              <span class="access-icon">●</span>
+              <p><strong>所在地</strong><br>〒907-0243 沖縄県石垣市宮良 XXX-XXX</p>
+            </div>
+            <div>
+              <span class="access-icon">○</span>
+              <p><strong>見学時間</strong><br>9:00 - 17:00（要予約）<br>農作業の状況により調整させていただきます。</p>
+            </div>
+            <div>
+              <span class="access-icon">■</span>
+              <p><strong>アクセス</strong><br>新石垣空港から車で約25分<br>駐車スペースあり（事前にお知らせください）</p>
             </div>
           </div>
-          <!-- デスクトップ版 ナビゲーションリンク -->
-
-          <!-- モバイルメニュー -->
-          <div id="mobile-menu" class="hidden sm:hidden absolute z-30 shadow-md h-full w-full left-0 mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 bg-white">
-              <a href="#about"     class="text-gray-800 hover:bg-gray-100 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">私たち</a>
-              <a href="#featured"  class="text-gray-800 hover:bg-gray-100 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">ピックアップ</a>
-              <a href="#access"    class="text-gray-800 hover:bg-gray-100 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">アクセス</a>
-              <a href="#contact"   class="text-gray-800 hover:bg-gray-100 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">問い合わせ</a>
-              <a href="#instagram" class="text-gray-800 hover:bg-gray-100 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium">Instagram</a>
-            </div>
-          </div>
-          <!-- モバイルメニュー -->
-      </div>
-    </div>
-  </nav>
-
-  <!-- 私たちセクション -->
-  <section id="about" class="relative h-screen overflow-hidden">
-    <!-- スライダー -->
-    <div id="slider" class="slider absolute inset-0 w-full h-full" style="background-image: url('./img/slider/image1.jpg');">
-      <!-- スライダーのフィルター -->
-      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-    </div>
-    <!-- 私たちセクション -->
-
-    <!-- 縦書きの文章 -->
-    <div class="absolute top-0 right-0 h-full flex items-center justify-center p-10">
-      <p class="writing-mode-vertical text-white font-bold text-xl">
-        ここに縦書きの文章を配置します。<br>
-        GYのビジネスやサービスについての説明が入ります。
-      </p>
-    </div>
-  </section>
-
-
-  <!-- 特集セクション -->
-  <section id="featured" class="py-12 bg-gray-100">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-semibold text-center mb-6">特集</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="product-list">
-
-        <!-- たまねぎ -->
-        <div class="bg-white shadow-md rounded-lg overflow-hidden">
-          <div class="bg-cover bg-center h-56 p-4" style="background-image: url('./img/item/onion.jpg');">
-            <!-- 画像はCSSで背景として設定 -->
-          </div>
-          <div class="p-4">
-            <h3 class="font-bold text-xl mb-2"> おいしい たまねぎ</h3>
-            <p class="text-gray-800 mb-2">2, 000円 / kg</p>
-          </div>
+          <address>
+            株式会社GY<br>
+            〒123-4567 沖縄県石垣市宮良 XXX-XXX
+          </address>
         </div>
-        <!-- たまねぎ -->
-
-        <!-- ゴーヤ -->
-        <div class="bg-white shadow-md rounded-lg overflow-hidden">
-          <div class="bg-cover bg-center h-56 p-4" style="background-image: url('./img/item/goya.jpg');">
-            <!-- 画像はCSSで背景として設定 -->
-          </div>
-          <div class="p-4">
-            <h3 class="font-bold text-xl mb-2"> 香ばしい ゴーヤ</h3>
-            <p class="text-gray-800 mb-2">3, 000円 / kg</p>
-          </div>
-        </div>
-        <!-- ゴーヤ -->
-
-        <!-- バナナ -->
-        <div class="bg-white shadow-md rounded-lg overflow-hidden">
-          <div class="bg-cover bg-center h-56 p-4" style="background-image: url('./img/item/banana.jpg');">
-            <!-- 画像はCSSで背景として設定 -->
-          </div>
-          <div class="p-4">
-            <h3 class="font-bold text-xl mb-2"> 甘い バナナ</h3>
-            <p class="text-gray-800 mb-2">2, 000円 / kg</p>
-          </div>
-        </div>
-        <!-- バナナ -->
-
-        <!-- べにいも -->
-        <div class="bg-white shadow-md rounded-lg overflow-hidden">
-          <div class="bg-cover bg-center h-56 p-4" style="background-image: url('./img/item/beniimo.jpg');">
-            <!-- 画像はCSSで背景として設定 -->
-          </div>
-          <div class="p-4">
-            <h3 class="font-bold text-xl mb-2">紅芋</h3>
-            <p class="text-gray-800 mb-2">2, 000円 / kg</p>
-          </div>
-        </div>
-        <!-- べにいも -->
-
-        <div class="hidden-product bg-white shadow-md rounded-lg overflow-hidden hidden">
-          <!-- ピーマン -->
-          <div class="bg-white shadow-md rounded-lg overflow-hidden">
-            <div class="bg-cover bg-center h-56 p-4" style="background-image: url('./img/item/green_pepper.jpg');">
-              <!-- 画像はCSSで背景として設定 -->
-            </div>
-            <div class="p-4">
-              <h3 class="font-bold text-xl mb-2">いい感じの ピーマン</h3>
-              <p class="text-gray-800 mb-2">2, 000円 / kg</p>
-            </div>
-          </div>
-          <!-- ピーマン -->
-        </div>
-
-        <div class="hidden-product bg-white shadow-md rounded-lg overflow-hidden hidden">
-          <!-- おくら -->
-        <div class="bg-white shadow-md rounded-lg overflow-hidden">
-          <div class="bg-cover bg-center h-56 p-4" style="background-image: url('./img/item/okura.jpg');">
-            <!-- 画像はCSSで背景として設定 -->
-          </div>
-          <div class="p-4">
-            <h3 class="font-bold text-xl mb-2">栄養満点 おくら</h3>
-            <p class="text-gray-800 mb-2">2, 000円 / kg</p>
-          </div>
-        </div>
-        <!-- おくら -->
-
-        </div>
-
-        
-      </div>
-    </div>
-
-    <div class="text-center mt-6">
-      <button id="load-more" class="text-indigo-600 hover:text-indigo-800 font-semibold">
-        もっと見る
-      </button>
-    </div>
-  </section>
-  <!-- 特集セクション -->
-
-
-  <!-- メンバーセクション -->
-  <!-- 私たちセクション -->
-<section id="about" class="text-center py-12 bg-gray-100">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-semibold mb-6">私たちがつくっています</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-
-      
-      <div class="overflow-hidden rounded-full shadow-lg bg-white mx-auto" style="width: 300px; height: 300px;">
-        <img class="w-full h-2/3 object-cover" src="./img/member/hana1.jpeg" alt="メンバーの写真">
-        <div class="p-4">
-          <h3 class="font-bold">げんた</h3>
-          <p>役職や役割</p>
+        <div class="map-frame">
+          <iframe
+            title="株式会社GY 周辺地図"
+            src="https://www.google.com/maps?q=%E6%B2%96%E7%B8%84%E7%9C%8C%E7%9F%B3%E5%9E%A3%E5%B8%82%E5%AE%AE%E8%89%AF&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
         </div>
       </div>
-      
-      <div class="overflow-hidden rounded-full shadow-lg bg-white mx-auto" style="width: 300px; height: 300px;">
-        <img class="w-full h-2/3 object-cover" src="./img/member/hana2.jpeg" alt="メンバーの写真">
-        <div class="p-4">
-          <h3 class="font-bold">ゆうたろう</h3>
-          <p>役職や役割</p>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="contact-inner">
+        <p class="eyebrow">Contact</p>
+        <h2 id="contact-title">出荷・見学・お取引のご相談</h2>
+        <p>商品や畑の見学については、下記よりお問い合わせください。</p>
+        <div class="contact-actions">
+          <a class="button button-primary" href="mailto:info@example.com">メールで問い合わせる</a>
+          <a class="button button-outline" href="tel:0312345678">03-1234-5678</a>
         </div>
       </div>
+    </section>
+  </main>
 
+  <footer class="site-footer">
+    <div>
+      <img src="./img/logo_transparent.png" alt="株式会社GY" width="1122" height="1402" loading="lazy">
+      <p>株式会社GY</p>
     </div>
-  </div>
-</section>
-
-  
-
-
-  <!-- アクセスセクション -->
-  <section id="access" class="py-12 bg-gray-100">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-semibold text-center mb-6">アクセス</h2>
-      <p class="text-center my-2">畑の見学、できます！</p>
-      <!-- Googleマップの埋め込みコンテナ -->
-      <div class="map-container" style="height: 400px;">
-        <!-- Googleマップのiframe埋め込み -->
-        <iframe
-          width="100%"
-          height="100%"
-          frameborder="0"
-          style="border:0"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.577152320893!2d139.7594549152588!3d35.68283818019132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bf1e2e41b7b%3A0x2027a4a662f66d2f!2sTokyo+Station!5e0!3m2!1sen!2sjp!4v1641216094664!5m2!1sen!2sjp"
-          allowfullscreen>
-        </iframe>
-      </div>
-      <p class="my-2">沖縄県石垣市 宮良 XXX -XXX </p>
-    </div>
-  </section>
-  <!-- アクセスセクション -->
-
-  <!-- 問い合わせセクション -->
-  <section id="contact" class="py-12">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-semibold text-center mb-6">お問い合わせ</h2>
-
-      <div class="flex justify-center items-center my-4">
-        <!-- 会社情報コンテナ -->
-        <div class="w-full lg:w-1/2 mb-6 lg:mb-0 text-center bg-white p-4 shadow-md rounded-lg">
-          <!-- 会社名 -->
-          <div class="flex  items-center mb-4">
-            <p class="font-semibold" style="width: 100px;">会社名</p>
-            <p>株式会社GY</p>
-          </div>
-          <!-- 住所 -->
-          <div class="flex items-center mb-4">
-            <p class="font-semibold" style="width: 100px;">住所</p>
-            <p>〒123-4567 沖縄県石垣市宮良...</p>
-          </div>
-          <!-- 代表番号 -->
-          <div class="flex items-center">
-            <p class="font-semibold" style="width: 100px;">代表番号</p>
-            <p>03-1234-5678</p>
-          </div>
-        </div>
-      </div>
-
-      <hr>
-
-      <div class="text-center my-4">
-        <a href="#contact-form" class="text-indigo-600 hover:text-indigo-800 font-semibold">
-          問い合わせフォーム
-        </a>
-      </div>
-
-      <hr>
-    </div>
-  </section>
-
-
-
-  <!-- Instagramセクション -->
-  <section id="instagram" class="py-12">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-semibold text-center mb-6">Instagram</h2>
-      <!-- Instagramフィードまたは画像をここに追加 -->
-    </div>
-  </section>
-
+    <small>&copy; GY Co., Ltd. All Rights Reserved.</small>
+  </footer>
 </body>
 </html>
