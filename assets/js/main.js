@@ -13,6 +13,16 @@
   const slides = Array.from(document.querySelectorAll("[data-slide]"));
   const membersList = document.querySelector("[data-members-list]");
   const itemLists = Array.from(document.querySelectorAll("[data-items-list]"));
+  const pathPrefix = window.location.pathname.includes("/pages/") ? "../" : "./";
+  const defaultProductsHref = window.location.pathname.includes("/pages/")
+    ? "./products.html"
+    : "./pages/products.html";
+
+  const localPath = (value) => {
+    const path = String(value);
+    if (!path.startsWith("./")) return path;
+    return `${pathPrefix}${path.slice(2)}`;
+  };
 
   const escapeHtml = (value) => String(value)
     .replace(/&/g, "&amp;")
@@ -86,7 +96,7 @@
   if (membersList && Array.isArray(window.GY_MEMBERS)) {
     membersList.innerHTML = window.GY_MEMBERS.map((member) => `
       <article class="person-card">
-        <img src="${escapeHtml(member.image)}" alt="${escapeHtml(member.name)}" width="768" height="1024" loading="lazy">
+        <img src="${escapeHtml(localPath(member.image))}" alt="${escapeHtml(member.name)}" width="768" height="1024" loading="lazy">
         <div>
           <p class="person-role">${escapeHtml(member.role)}</p>
           <h3>${escapeHtml(member.name)}</h3>
@@ -105,7 +115,7 @@
 
       list.innerHTML = items.map((item) => `
         <article class="product-card">
-          <img class="product-card__image" src="${escapeHtml(item.image)}" alt="${escapeHtml(item.name)}" width="768" height="1024" loading="lazy">
+          <img class="product-card__image" src="${escapeHtml(localPath(item.image))}" alt="${escapeHtml(item.name)}" width="768" height="1024" loading="lazy">
           <div class="product-card__body">
             <p class="product-label product-card__meta">
               <span>${escapeHtml(item.label)}</span>
@@ -113,7 +123,7 @@
             </p>
             <h3>${escapeHtml(item.name)}</h3>
             <p>${escapeHtml(item.intro)}</p>
-            <a class="product-card__link" href="./products.html" aria-label="${escapeHtml(item.name)}を見る"></a>
+            <a class="product-card__link" href="${escapeHtml(list.dataset.productsHref || defaultProductsHref)}" aria-label="${escapeHtml(item.name)}を見る"></a>
           </div>
         </article>
       `).join("");

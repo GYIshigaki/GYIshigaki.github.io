@@ -65,3 +65,12 @@ intro: |
 - `img/slider/`: メインビジュアル用のスライダー画像。
 - `img/farm/`: 畑・収穫・実績など、汎用的な農園写真。
 - `assets/img/decor/`: 和紙背景、葉、罫線、線画などの装飾素材。
+
+## ページ構成
+
+- `index.html`: トップページ。
+- `pages/products.html`: 商品一覧ページ。
+- `pages/news.html`: お知らせページ。
+- `pages/achievements.html`: 実績ページ。
+
+制作途中の参照素材は `material/` に整理し、Git 管理対象外にしています。
