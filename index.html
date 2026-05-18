@@ -11,6 +11,11 @@
   <meta property="og:description" content="沖縄県石垣市で、島の恵みをまっすぐ届ける農園です。">
   <meta property="og:image" content="./img/slider/image1.jpg">
   <title>株式会社GY | 石垣島の農園</title>
+  <link rel="icon" href="./assets/favicon/favicon.ico" sizes="any">
+  <link rel="icon" href="./assets/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="./assets/favicon/site.webmanifest">
+  <meta name="theme-color" content="#173C2D">
   <link rel="preload" href="./img/slider/image1.jpg" as="image">
   <link rel="stylesheet" href="./assets/css/styles.css">
   <script src="./assets/js/members.js" defer></script>
@@ -34,10 +39,11 @@
 
     <nav class="site-nav" id="site-nav" data-menu>
       <a href="#about">私たち</a>
-      <a href="./products.html">商品</a>
-      <a href="./achievements.html">実績</a>
+      <a href="#products">商品</a>
       <a href="#farm">農園のこと</a>
-      <a href="#access">アクセス</a>
+      <a href="#members">つくり手</a>
+      <a href="#news">お知らせ</a>
+      <a href="#access">畑の見学</a>
       <a href="#contact">お問い合わせ</a>
     </nav>
   </header>
@@ -81,18 +87,23 @@
     </section>
 
     <section class="section about-section" id="about" aria-labelledby="about-title">
-      <div class="section-grid">
-        <div class="section-copy">
-          <p class="eyebrow">About Us</p>
-          <h2 id="about-title">南の島で、手をかけて育てる。</h2>
-          <p>石垣島の強い日差し、海風、雨のリズム。株式会社GYは、その土地らしさを大切にしながら、野菜と果物の状態を見て一つひとつ手を入れています。</p>
-          <p>商品だけでなく、つくり手や畑の背景まで伝わるように。日々の仕事をていねいに積み重ね、島の恵みをまっすぐ届けます。</p>
+      <div class="about-section__inner">
+        <div class="section-copy about-section__copy">
+          <p class="eyebrow about-section__label">About Us</p>
+          <h2 class="about-section__title" id="about-title">南の島で、<br>手をかけて育てる。</h2>
+          <p class="about-section__lead">石垣島の強い日差し、海風、雨のリズム。株式会社GYは、その土地らしさを大切にしながら、野菜と果物の状態を見て一つひとつ手を入れています。</p>
+          <p class="about-section__lead">商品だけでなく、つくり手や畑の背景まで伝わるように。日々の仕事をていねいに積み重ね、島の恵みをまっすぐ届けます。</p>
         </div>
-        <div class="photo-pair" aria-label="農園の写真">
-          <img src="./img/farm/LINE_ALBUM_HP素材_231117_5.jpg" alt="収穫された農産物" width="1280" height="1280" loading="lazy">
-          <img src="./img/farm/LINE_ALBUM_HP素材_231117_48.jpg" alt="石垣島の農園風景" width="1280" height="1280" loading="lazy">
+        <div class="photo-pair about-section__photos" aria-label="農園の写真">
+          <figure class="about-section__photo about-section__photo--main">
+            <img src="./img/farm/farm-05.jpg" alt="収穫された農産物" width="1280" height="1280" loading="lazy">
+          </figure>
+          <figure class="about-section__photo about-section__photo--sub">
+            <img src="./img/farm/farm-09.jpg" alt="ハウス内の畑" width="1109" height="1479" loading="lazy">
+          </figure>
         </div>
       </div>
+      <div class="about-section__wave" aria-hidden="true"></div>
     </section>
 
     <section class="section products-section" id="products" aria-labelledby="products-title">
@@ -111,7 +122,7 @@
 
     <section class="story-band" id="farm" aria-labelledby="farm-title">
       <div class="story-media">
-        <img src="./img/farm/LINE_ALBUM_HP素材_231117_21.jpg" alt="畑で育つ作物" width="1280" height="1280" loading="lazy">
+        <img src="./img/farm/farm-21.jpg" alt="畑で育つ作物" width="1280" height="1280" loading="lazy">
         <p class="story-media-caption">太陽と風が育てる、<br>島の恵み。</p>
       </div>
       <div class="story-copy">
@@ -144,7 +155,7 @@
       <div class="people-grid" data-members-list></div>
     </section>
 
-    <section class="section news-section" aria-labelledby="news-title">
+    <section class="section news-section" id="news" aria-labelledby="news-title">
       <div class="section-grid">
         <div class="section-copy">
           <p class="eyebrow">News</p>
@@ -154,10 +165,10 @@
             <li><time datetime="2024-04-20">2024.04.20</time><span>新玉ねぎの出荷を開始しました</span></li>
             <li><time datetime="2024-04-01">2024.04.01</time><span>春夏野菜の収穫が始まりました</span></li>
           </ul>
-          <a class="button button-primary" href="./achievements.html">お知らせ一覧</a>
+          <a class="button button-primary" href="./news.html">お知らせ一覧</a>
         </div>
         <div class="news-photo">
-          <img src="./img/farm/LINE_ALBUM_HP素材_231117_31.jpg" alt="石垣島の農園風景" width="1280" height="1280" loading="lazy">
+          <img src="./img/farm/farm-31.jpg" alt="石垣島の農園風景" width="1280" height="1280" loading="lazy">
         </div>
       </div>
     </section>
@@ -234,10 +245,11 @@
       </div>
       <nav class="site-footer__nav" aria-label="フッターナビゲーション">
         <a href="#about">私たち</a>
-        <a href="./products.html">商品</a>
-        <a href="./achievements.html">実績</a>
+        <a href="#products">商品</a>
         <a href="#farm">農園のこと</a>
-        <a href="#access">アクセス</a>
+        <a href="#members">つくり手</a>
+        <a href="#news">お知らせ</a>
+        <a href="#access">畑の見学</a>
         <a href="#contact">お問い合わせ</a>
       </nav>
       <div class="site-footer__contact">

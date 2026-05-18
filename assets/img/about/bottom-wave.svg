@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="170" viewBox="0 0 1440 170" preserveAspectRatio="none">
+  <title>About section bottom wave</title>
+  <path d="M0 64 C230 30 430 52 654 72 C902 94 1110 98 1440 52 V170 H0 Z" fill="#F2E8D4" fill-opacity="0.34"/>
+  <path d="M0 88 C270 54 492 78 738 98 C975 118 1190 100 1440 76 V170 H0 Z" fill="#EFE3C9" fill-opacity="0.58"/>
+  <path d="M0 112 C250 82 510 96 760 116 C1010 136 1225 132 1440 102 V170 H0 Z" fill="#F6EFDF"/>
+  <path d="M0 112 C250 82 510 96 760 116 C1010 136 1225 132 1440 102" fill="none" stroke="#C99A45" stroke-width="1" stroke-opacity="0.35"/>
+</svg>

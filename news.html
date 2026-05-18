@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="株式会社GYが石垣島で育てる野菜や果物の商品一覧です。">
+  <meta name="description" content="株式会社GYからのお知らせ一覧です。出荷情報、季節の収穫、サイト更新などを掲載します。">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; script-src 'self'; style-src 'self'; frame-src https://www.google.com; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="商品一覧 | 株式会社GY">
-  <meta property="og:description" content="石垣島の畑から届く、株式会社GYの商品一覧です。">
-  <meta property="og:image" content="./img/item/goya/image.jpg">
-  <title>商品一覧 | 株式会社GY</title>
+  <meta property="og:title" content="お知らせ | 株式会社GY">
+  <meta property="og:description" content="株式会社GYからのお知らせ一覧です。">
+  <meta property="og:image" content="./img/farm/farm-31.jpg">
+  <title>お知らせ | 株式会社GY</title>
   <link rel="icon" href="./assets/favicon/favicon.ico" sizes="any">
   <link rel="icon" href="./assets/favicon/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="./assets/favicon/apple-touch-icon.png">
   <link rel="manifest" href="./assets/favicon/site.webmanifest">
   <meta name="theme-color" content="#173C2D">
   <link rel="stylesheet" href="./assets/css/styles.css">
-  <script src="./assets/js/items.js" defer></script>
   <script src="./assets/js/main.js" defer></script>
 </head>
 <body>
@@ -40,46 +39,57 @@
       <a href="./index.html#products">商品</a>
       <a href="./index.html#farm">農園のこと</a>
       <a href="./index.html#members">つくり手</a>
-      <a href="./news.html">お知らせ</a>
+      <a href="./news.html" aria-current="page">お知らせ</a>
       <a href="./index.html#access">畑の見学</a>
       <a href="./index.html#contact">お問い合わせ</a>
     </nav>
   </header>
 
   <main id="main">
-    <section class="page-hero products-page-hero" aria-labelledby="page-title">
+    <section class="page-hero news-page-hero" aria-labelledby="page-title">
       <div>
-        <p class="eyebrow">Products</p>
-        <h1 id="page-title">商品一覧</h1>
-        <p>石垣島の畑から、旬に合わせてお届けする野菜と果物です。</p>
+        <p class="eyebrow">News</p>
+        <h1 id="page-title">お知らせ</h1>
+        <p>出荷情報や季節の収穫、サイト更新など、株式会社GYからのお知らせを掲載します。</p>
       </div>
     </section>
 
-    <section class="section products-section products-page-section" aria-labelledby="all-products-title">
+    <section class="section news-page-section" aria-labelledby="news-list-title">
       <div class="section-heading">
-        <p class="eyebrow">Lineup</p>
-        <h2 id="all-products-title">すべての商品</h2>
-        <p>収穫状況により出荷できる品目は変わります。詳しい時期や数量はお問い合わせください。</p>
+        <p class="eyebrow">Information</p>
+        <h2 id="news-list-title">お知らせ一覧</h2>
       </div>
-
-      <div class="product-slider-shell">
-        <div class="product-grid product-grid-wide" data-items-list data-items-mode="all"></div>
-      </div>
+      <ol class="timeline news-timeline">
+        <li>
+          <time datetime="2024-05-15">2024.05.15</time>
+          <div>
+            <h3>ホームページをリニューアルしました</h3>
+            <p>株式会社GYの農園、商品、つくり手の情報を見やすく整理しました。</p>
+          </div>
+        </li>
+        <li>
+          <time datetime="2024-04-20">2024.04.20</time>
+          <div>
+            <h3>新玉ねぎの出荷を開始しました</h3>
+            <p>収穫状況に合わせて、旬の野菜を順次ご案内します。</p>
+          </div>
+        </li>
+        <li>
+          <time datetime="2024-04-01">2024.04.01</time>
+          <div>
+            <h3>春夏野菜の収穫が始まりました</h3>
+            <p>ゴーヤ、ピーマン、おくらなど、石垣島の畑から季節の品目をお届けします。</p>
+          </div>
+        </li>
+      </ol>
     </section>
 
-    <section class="contact-section" id="contact" aria-labelledby="products-contact-title">
-      <div class="contact-inner">
-        <p class="contact-label">Contact</p>
-        <h2 class="contact-title" id="products-contact-title">
-          <span>出荷・見学・</span>
-          <span>お取引のご相談</span>
-        </h2>
-        <div class="contact-divider" aria-hidden="true"></div>
-        <p>商品や畑の見学については、下記よりお問い合わせください。</p>
-        <div class="contact-actions">
-          <a class="contact-button contact-button--mail" href="mailto:info@example.com">メールで問い合わせる</a>
-          <a class="contact-button contact-button--tel" href="tel:0312345678">03-1234-5678</a>
-        </div>
+    <section class="section achievements-section" aria-labelledby="achievements-link-title">
+      <div class="section-heading">
+        <p class="eyebrow">Achievements</p>
+        <h2 id="achievements-link-title">実績</h2>
+        <p>出荷、納品、見学受け入れなどの取り組みは、実績ページにまとめています。</p>
+        <a class="button button-outline" href="./achievements.html">実績ページを見る</a>
       </div>
     </section>
   </main>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="760" viewBox="0 0 760 760" fill="none">
+  <title>Soft banana leaf background</title>
+  <g opacity="0.18" stroke="#173C2D" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M418 724C460 596 486 465 492 318C496 208 478 116 444 26" stroke-width="4"/>
+    <path d="M492 318C585 250 660 154 730 48C618 76 540 130 492 318Z" fill="#173C2D" fill-opacity="0.24" stroke-width="2"/>
+    <path d="M484 384C610 388 682 450 742 560C620 546 532 498 484 384Z" fill="#173C2D" fill-opacity="0.22" stroke-width="2"/>
+    <path d="M466 476C548 560 577 644 572 744C490 690 448 612 466 476Z" fill="#173C2D" fill-opacity="0.22" stroke-width="2"/>
+    <path d="M454 214C354 142 250 95 74 82C166 168 260 235 454 214Z" fill="#173C2D" fill-opacity="0.20" stroke-width="2"/>
+    <path d="M466 332C352 302 238 302 76 344C192 416 300 433 466 332Z" fill="#173C2D" fill-opacity="0.20" stroke-width="2"/>
+    <path d="M458 520C346 480 238 494 92 560C200 624 332 652 458 520Z" fill="#173C2D" fill-opacity="0.20" stroke-width="2"/>
+    <path d="M492 318C578 286 646 204 724 60" stroke-width="1.4" opacity="0.75"/>
+    <path d="M484 384C590 420 660 484 742 560" stroke-width="1.4" opacity="0.75"/>
+    <path d="M466 476C510 564 546 642 572 744" stroke-width="1.4" opacity="0.75"/>
+    <path d="M454 214C300 172 188 124 74 82" stroke-width="1.4" opacity="0.75"/>
+    <path d="M466 332C308 350 190 346 76 344" stroke-width="1.4" opacity="0.75"/>
+    <path d="M458 520C304 552 186 560 92 560" stroke-width="1.4" opacity="0.75"/>
+    <path d="M526 284L676 110M522 298L640 164M510 336L706 96M526 414L694 520M512 402L650 486M482 500L542 696M452 236L132 102M438 260L172 164M442 360L118 382M426 392L190 426M430 548L132 584M410 580L224 620" stroke-width="1" opacity="0.7"/>
+  </g>
+</svg>

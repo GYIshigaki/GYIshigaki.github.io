@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="36" viewBox="0 0 320 36" fill="none">
+  <title>About heading divider</title>
+  <g stroke="#C99A45" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.86">
+    <path d="M6 18H118"/>
+    <path d="M202 18H314"/>
+    <path d="M156 18C166 10 176 8 188 10"/>
+    <path d="M162 17C166 11 168 6 167 2"/>
+    <path d="M162 17C158 11 154 7 149 5"/>
+    <path d="M174 12C176 7 179 4 184 2"/>
+    <path d="M174 12C172 7 170 5 166 3"/>
+    <path d="M149 22C139 24 132 29 126 34"/>
+    <path d="M149 22C144 18 139 17 134 17"/>
+    <path d="M149 22C145 26 143 30 143 35"/>
+  </g>
+  <circle cx="160" cy="18" r="2.4" fill="#C99A45" opacity="0.8"/>
+</svg>
