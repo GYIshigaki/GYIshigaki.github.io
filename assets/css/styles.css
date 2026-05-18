@@ -42,11 +42,17 @@ body.menu-open::before {
   inset: 0;
   z-index: 58;
   content: "";
-  background: rgba(31, 57, 43, 0.38);
+  background: rgba(12, 30, 24, 0.48);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
 body.menu-open .site-header {
   z-index: 100;
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+  pointer-events: none;
 }
 
 img {
@@ -166,6 +172,10 @@ button {
 .site-nav a:focus-visible::after,
 .site-nav a[aria-current="page"]::after {
   transform: scaleX(1);
+}
+
+.site-nav__drawer-header {
+  display: none;
 }
 
 .menu-button {
@@ -1119,15 +1129,16 @@ address {
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(rgba(255, 253, 247, 0.76), rgba(255, 253, 247, 0.76)),
-    url("../img/decor/paper-leaf-wide.png") center top / cover;
+    url("../img/decor/paper-cream.png") center top / 560px auto repeat,
+    var(--color-paper);
 }
 
 .access-section::before,
 .access-section::after {
   position: absolute;
+  display: none;
   content: "";
-  background: url("../img/decor/crop-sketches.png") center / contain no-repeat;
+  background: none;
   opacity: 0.06;
   pointer-events: none;
 }
@@ -1510,6 +1521,7 @@ body {
 .people-section::before,
 .products-section::after {
   position: absolute;
+  display: none;
   content: "";
   background-repeat: no-repeat;
   background-size: contain;
@@ -1522,15 +1534,15 @@ body {
   left: -28px;
   width: min(26vw, 280px);
   aspect-ratio: 1;
-  background-image: url("../img/decor/leaf-flower-left.png");
+  background-image: none;
 }
 
 .products-section {
   position: relative;
   overflow: hidden;
   background:
-    linear-gradient(rgba(246, 235, 216, 0.84), rgba(246, 235, 216, 0.84)),
-    url("../img/decor/paper-leaf-wide.png") center top / cover;
+    url("../img/decor/paper-cream.png") center top / 560px auto repeat,
+    var(--color-cream);
 }
 
 .products-section::after {
@@ -1538,7 +1550,7 @@ body {
   top: 28px;
   width: min(22vw, 250px);
   aspect-ratio: 1;
-  background-image: url("../img/decor/leaf-corner-right.png");
+  background-image: none;
   opacity: 0.08;
 }
 
@@ -1821,6 +1833,15 @@ body {
     transform: translateY(-12px) rotate(-45deg);
   }
 
+  body.menu-open .site-header .menu-button {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  body.menu-open .brand {
+    opacity: 0;
+  }
+
   .site-nav {
     position: fixed;
     top: 0;
@@ -1832,36 +1853,110 @@ body {
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    width: min(86vw, 360px);
+    width: min(86vw, 380px);
     max-width: calc(100vw - 24px);
     height: 100vh;
     height: 100dvh;
     visibility: hidden;
-    padding: calc(env(safe-area-inset-top) + 92px) max(22px, env(safe-area-inset-right)) 34px 22px;
+    padding: calc(22px + env(safe-area-inset-top)) max(28px, env(safe-area-inset-right)) 28px 28px;
     overflow-y: auto;
-    border-left: 1px solid var(--color-line);
+    border-left: 1px solid rgba(176, 137, 75, 0.24);
     background-color: rgba(255, 253, 247, 0.98);
     background-image: url("../img/decor/paper-cream.png");
     background-position: center top;
     background-repeat: repeat;
     background-size: 520px auto;
-    font-size: 1.32rem;
+    color: var(--color-leaf-dark);
+    font-size: 1.18rem;
     opacity: 0;
-    box-shadow: -20px 0 50px rgba(34, 49, 40, 0.18);
+    box-shadow: -18px 0 44px rgba(18, 28, 22, 0.22);
     transform: translateX(100%);
-    transition: opacity 180ms ease, visibility 180ms ease, transform 180ms ease;
+    transition: opacity 240ms ease, visibility 240ms ease, transform 320ms ease;
+    pointer-events: auto;
   }
 
-  .site-nav a {
+  .site-nav__drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 58px;
+    margin-bottom: 28px;
+  }
+
+  .site-nav__logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 76px;
+    height: 58px;
+    overflow: hidden;
+  }
+
+  .site-nav__logo img {
+    width: auto;
+    height: 56px;
+    object-fit: contain;
+  }
+
+  .site-nav__close {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  .site-nav__close span {
+    position: absolute;
+    top: 50%;
+    right: 9px;
+    left: 9px;
+    height: 2px;
+    background: var(--color-leaf-dark);
+  }
+
+  .site-nav__close span:first-child {
+    transform: rotate(45deg);
+  }
+
+  .site-nav__close span:last-child {
+    transform: rotate(-45deg);
+  }
+
+  .site-nav > a {
     width: 100%;
-    max-width: 280px;
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(222, 214, 200, 0.42);
+    min-height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2px;
+    border-bottom: 1px solid rgba(176, 137, 75, 0.2);
     text-align: left;
+    font-size: 1.18rem;
+    font-weight: 700;
+    letter-spacing: 0;
   }
 
-  .site-nav a::after {
-    display: none;
+  .site-nav > a::after {
+    display: block;
+    position: static;
+    width: auto;
+    height: auto;
+    content: "→";
+    color: var(--color-sun);
+    background: transparent;
+    font-size: 1rem;
+    transform: none;
+    transition: transform 180ms ease;
+  }
+
+  .site-nav > a:active::after {
+    transform: translateX(3px);
+  }
+
+  .site-nav > a[aria-current="page"]::after {
+    transform: none;
   }
 
   .site-nav.is-open {

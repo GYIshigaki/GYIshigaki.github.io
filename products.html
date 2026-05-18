@@ -28,14 +28,23 @@
       <img src="./img/logo_transparent.png" alt="株式会社GY" width="1122" height="1402">
     </a>
 
-    <button class="menu-button" type="button" data-menu-button aria-controls="site-nav" aria-expanded="false">
+    <button class="menu-button" type="button" data-menu-button aria-controls="site-nav" aria-expanded="false" aria-label="メニューを開く">
       <span></span>
       <span></span>
       <span></span>
       <span class="sr-only">メニュー</span>
     </button>
 
-    <nav class="site-nav" id="site-nav" data-menu>
+    <nav class="site-nav" id="site-nav" data-menu aria-label="サイトナビゲーション">
+      <div class="site-nav__drawer-header">
+        <a class="site-nav__logo" href="./index.html#top" aria-label="株式会社GY ホーム">
+          <img src="./img/logo_transparent.png" alt="株式会社GY" width="1122" height="1402" loading="lazy">
+        </a>
+        <button class="site-nav__close" type="button" data-menu-close aria-label="メニューを閉じる">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
       <a href="./index.html#about">私たち</a>
       <a href="./index.html#products">商品</a>
       <a href="./index.html#farm">農園のこと</a>

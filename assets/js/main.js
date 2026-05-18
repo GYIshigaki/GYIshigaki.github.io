@@ -9,6 +9,7 @@
   const body = document.body;
   const menu = document.querySelector("[data-menu]");
   const menuButton = document.querySelector("[data-menu-button]");
+  const menuCloseButton = document.querySelector("[data-menu-close]");
   const slides = Array.from(document.querySelectorAll("[data-slide]"));
   const membersList = document.querySelector("[data-members-list]");
   const itemLists = Array.from(document.querySelectorAll("[data-items-list]"));
@@ -23,16 +24,33 @@
     if (!menu || !menuButton) return;
     menu.classList.remove("is-open");
     menuButton.setAttribute("aria-expanded", "false");
+    menuButton.setAttribute("aria-label", "メニューを開く");
     body.classList.remove("menu-open");
+    menuButton.focus({ preventScroll: true });
+  };
+
+  const openMenu = () => {
+    if (!menu || !menuButton) return;
+    menu.classList.add("is-open");
+    menuButton.setAttribute("aria-expanded", "true");
+    menuButton.setAttribute("aria-label", "メニューを閉じる");
+    body.classList.add("menu-open");
   };
 
   if (menu && menuButton) {
     menuButton.addEventListener("click", (event) => {
       event.stopPropagation();
       const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-      menu.classList.toggle("is-open", !isOpen);
-      menuButton.setAttribute("aria-expanded", String(!isOpen));
-      body.classList.toggle("menu-open", !isOpen);
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    menuCloseButton?.addEventListener("click", (event) => {
+      event.stopPropagation();
+      closeMenu();
     });
 
     menu.addEventListener("click", (event) => {

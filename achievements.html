@@ -27,14 +27,23 @@
       <img src="./img/logo_transparent.png" alt="株式会社GY" width="1122" height="1402">
     </a>
 
-    <button class="menu-button" type="button" data-menu-button aria-controls="site-nav" aria-expanded="false">
+    <button class="menu-button" type="button" data-menu-button aria-controls="site-nav" aria-expanded="false" aria-label="メニューを開く">
       <span></span>
       <span></span>
       <span></span>
       <span class="sr-only">メニュー</span>
     </button>
 
-    <nav class="site-nav" id="site-nav" data-menu>
+    <nav class="site-nav" id="site-nav" data-menu aria-label="サイトナビゲーション">
+      <div class="site-nav__drawer-header">
+        <a class="site-nav__logo" href="./index.html#top" aria-label="株式会社GY ホーム">
+          <img src="./img/logo_transparent.png" alt="株式会社GY" width="1122" height="1402" loading="lazy">
+        </a>
+        <button class="site-nav__close" type="button" data-menu-close aria-label="メニューを閉じる">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
       <a href="./index.html#about">私たち</a>
       <a href="./index.html#products">商品</a>
       <a href="./index.html#farm">農園のこと</a>
@@ -152,25 +161,47 @@
       </ol>
     </section>
 
-    <section class="contact-section" aria-labelledby="achievement-contact-title">
+    <section class="contact-section" id="contact" aria-labelledby="achievement-contact-title">
       <div class="contact-inner">
-        <p class="eyebrow">Contact</p>
-        <h2 id="achievement-contact-title">実績掲載・お取引のご相談</h2>
-        <p>納品、見学、共同企画などについては、下記よりお問い合わせください。</p>
+        <p class="contact-label">Contact</p>
+        <h2 class="contact-title" id="achievement-contact-title">
+          <span>出荷・見学・</span>
+          <span>お取引のご相談</span>
+        </h2>
+        <div class="contact-divider" aria-hidden="true"></div>
+        <p>商品や畑の見学については、下記よりお問い合わせください。</p>
         <div class="contact-actions">
-          <a class="button button-primary" href="mailto:info@example.com">メールで問い合わせる</a>
-          <a class="button button-outline" href="./products.html">商品を見る</a>
+          <a class="contact-button contact-button--mail" href="mailto:info@example.com">メールで問い合わせる</a>
+          <a class="contact-button contact-button--tel" href="tel:0312345678">03-1234-5678</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div>
-      <img src="./img/logo_transparent.png" alt="株式会社GY" width="1122" height="1402" loading="lazy">
-      <p>株式会社GY</p>
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <img src="./img/logo_transparent.png" alt="株式会社GY" width="1122" height="1402" loading="lazy">
+        <div>
+          <p class="site-footer__name">株式会社GY</p>
+          <p class="site-footer__address">〒907-0243 沖縄県石垣市宮良 XXX-XXX</p>
+        </div>
+      </div>
+      <nav class="site-footer__nav" aria-label="フッターナビゲーション">
+        <a href="./index.html#about">私たち</a>
+        <a href="./index.html#products">商品</a>
+        <a href="./index.html#farm">農園のこと</a>
+        <a href="./index.html#members">つくり手</a>
+        <a href="./news.html">お知らせ</a>
+        <a href="./index.html#access">畑の見学</a>
+        <a href="./index.html#contact">お問い合わせ</a>
+      </nav>
+      <div class="site-footer__contact">
+        <a href="tel:0312345678">03-1234-5678</a>
+        <a href="mailto:info@example.com">info@example.com</a>
+      </div>
     </div>
-    <small>&copy; GY Co., Ltd. All Rights Reserved.</small>
+    <small class="site-footer__copyright">&copy; GY Co., Ltd. All Rights Reserved.</small>
   </footer>
 </body>
 </html>
